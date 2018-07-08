@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How far up does the tram go? | hann.io</title>
+  <meta name="description" content="Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61. Service on line 58 has been suspended since 1977. In this case, “susp...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2013/how-far-up-does-the-tram-go">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="How far up does the tram go?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2013/how-far-up-does-the-tram-go" />
+  <meta property="og:image" content="https://hann.io/assets/og/trams_fortepan_67539.jpg" />
+  <meta property="article:published_time" content="2013-11-25T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/about/index.html">About me</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>How far up does the tram go?</h1>
+<p class="subtitle">November 25, 2013</p>
+
+<p>Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61.<label for="sn-id-trams" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-trams" class="margin-toggle" /><span class="sidenote"> Service on line 58 has been suspended since 1977. In this case, “suspension” includes the tracks having been removed and paved over. Based on this, I do not think service will restart anytime soon. </span> But how far up do these actually go? And which one is the steepest?</p>
+
+<!--more-->
+
+<p>Interestingly, all of these lines go through <em>Széll Kálmán square</em> (previously known as <em>Moscow square</em>), so we can plot their elevation profile starting at the same spot.</p>
+
+<p><figure><img src="/assets/img/tram_elevation_vegallomas_fp_84943.jpg" /><figcaption><span>Tram terminus at Zugliget, 1909. <em><a href="http://fortepan.hu/?img=86971">FORTEPAN / MAGYAR FÖLDRAJZI MÚZEUM / ERDÉLYI MÓR CÉGE.</a> Creative Commons CC-BY-SA-3.0</em></span></figcaption></figure></p>
+
+<p>I did not include the <a href="https://en.wikipedia.org/wiki/Budapest_Cog-wheel_Railway">cog-weel railway</a>, as it has a much steeper incline (for which the cog wheels are needed); I only focused on regular trams.</p>
+
+<p><figure class="fullwidth"><img src="/assets/img/tram_elevation_profiles.png" /><figcaption><span>Elevation profiles of selected tram lines in Budapest</span></figcaption></figure></p>
+
+<p>You can explore these lines on a map (and download the data if you wish) <a href="https://drive.google.com/open?id=1gZZO73ALbx7FdlXHK8PpKdtNR0M&amp;usp=sharing">here</a>.</p>
+
+<p>I created this chart using <a href="https://www.garmin.com/en-US/shop/downloads/basecamp">Garmin Basecamp</a> with maps from <a href="https://openmaps.eu/">OpenMaps.eu</a>. Since I knew where the trams run, I just drew a track along their route and created the elevation profile. After this I merged the profiles onto each other using Inkscape.</p>
+
+<p>In the case of this project, I still think that the manual solution is the easiest. If I were to do this programmatically, I would do the following (using Python as a wrapper):</p>
+
+<ol>
+  <li>Query Openstreetmap for tram relations (see <a href="/articles/2013/revolutionary-street-names">this post</a> for some details)</li>
+  <li>Add elevation data using the <a href="https://developer.mapquest.com/documentation/">MapQuest API</a></li>
+  <li>Come up with some logic to transform the data – for example, move all elevation profiles to start from the same point and put the lower end to the beginning of the profile</li>
+  <li>Use <a href="http://ggplot.yhathq.com/">ggplot</a> to visualize the elevation profiles</li>
+</ol>
+
+<p><em>A previous version of this article originally appeared on</em> <a href="http://transporteconomics.hu/">transporteconomics.hu</a><em>, a transportation-focused personal blog I do not update anymore.</em></p>
+
+<p><em>Cover photo: <a href="http://fortepan.hu/?img=67539">FORTEPAN / MAGYAR RENDŐR.</a> Creative Commons CC-BY-SA-3.0</em></p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2013/how-far-up-does-the-tram-go"
+this.page.identifier = "/articles/2013/how-far-up-does-the-tram-go"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">How far up does the tram go? - November 25, 2013 - András Hann</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:andras at [lastname] dot io"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//github.com/andrashann"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2018 &nbsp;&nbsp;ANDRÁS HANN</span></br> <br>
+<span>This site created with a customized version of the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

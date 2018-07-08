@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Revolutionary street names | hann.io</title>
+  <meta name="description" content="Every Hungarian knows that almost every village in the country will have a street named after Lajos Kossuth, revolutionary and politician, and another named ...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2013/revolutionary-street-names">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Revolutionary street names" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2013/revolutionary-street-names" />
+  <meta property="og:image" content="https://hann.io/assets/og/hann_io.png" />
+  <meta property="article:published_time" content="2013-03-15T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/about/index.html">About me</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Revolutionary street names</h1>
+<p class="subtitle">March 15, 2013</p>
+
+<p>Every Hungarian knows that almost every village in the country will have a street named after Lajos Kossuth, revolutionary and politician, and another named after Sándor Petőfi, an emblematic hero-poet – both of whom took part in the <a href="https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1848">Hungarian Revolution of 1848</a>. But where exactly are these streets?</p>
+
+<!--more-->
+
+<p><figure><img src="/assets/img/forradalmi_utcanevek_pilvax.jpg" /><figcaption><span>The interior of <em>Café Pilvax</em> during the <a href="https://en.wikipedia.org/wiki/Hungarian_Reform_Era">Hungarian Reform Era</a>. Colored pen drawing by József Preiszler.  <em><a href="https://commons.wikimedia.org/wiki/File:Pilvax_Pest_Preiszler.jpg">Wikimedia Commons</a></em></span></figcaption></figure></p>
+
+<p>The Revolution started as a meeting of few people at a coffehouse but turned into a full-blown war of independece against the Habsurg rule over the country later on. While the Hungarians lost the war, it had lasting effects on the structure of the Habsburg Empire and resulted in the <a href="https://en.wikipedia.org/wiki/Austro-Hungarian_Compromise_of_1867">Austro-Hungarian Compromise of 1867</a>, which brought a fairer share of powers within the Empire.</p>
+
+<p>Thus, it is not surprising that key figures are commemorated by naming streets after them. The map of these streets is shown below.<label for="sn-colorblind" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-colorblind" class="margin-toggle" /><span class="sidenote"> The map uses red and green in reference to the colors of the <a href="https://en.wikipedia.org/wiki/Flag_of_Hungary">flag of Hungary</a>; you can find a colorblind-friendly version <a href="/assets/img/forradalmi_utcanevek_terkep_colorblind.png">here</a>. </span> Notice that many of these streets are outside of Hungary. This is due to the fact that the Kingdom of Hungary lost most of its territories as a result of <a href="https://en.wikipedia.org/wiki/Treaty_of_Trianon">the treaties after WWI</a>, but a large number of Hungarian speakers remained in these areas, also keeping their street names.</p>
+
+<p><figure class="fullwidth"><img src="/assets/img/forradalmi_utcanevek_terkep.png" /><figcaption><span>Streets of Kossuth and Petőfi</span></figcaption></figure></p>
+
+<p>The best approach is to use <a href="https://overpass-turbo.eu/">Overpass Turbo</a> to query the data.<label for="sn-id-oldversion" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-oldversion" class="margin-toggle" /><span class="sidenote"> Originally, I used the <a href="https://www.geofabrik.de/data/download.html">GeoFabrik Openstreetmap extracts</a> for this project, but they have removed street names from the free shapefiles since then. Hence this alternative approach. </span> I will not go into details about the query language,<label for="sn-id-overpass" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-overpass" class="margin-toggle" /><span class="sidenote"> See the Overpass API <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide">language guide</a>, <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL">full documentiation</a>, or <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example">examples</a> if you want to learn more. </span> but you can try it yourself by going to the website and pasting the following for the query (or just following this <a href="https://overpass-turbo.eu/s/yQm">direct link</a><label for="sn-id-not-immediate" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-not-immediate" class="margin-toggle" /><span class="sidenote"> To get the data, click on the “Run” button to actually run the query. It is not run automatically since it is quite heavy both on the server and the browser. </span>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[out:json][timeout:2500];
+(
+  way
+    ["name"~"Petőfi"]
+    ["highway"]
+    (17.560246503295,2.98828125,62.915233039476,38.14453125);
+  way
+    ["name"~"Kossuth"]
+    ["highway"]
+    (17.560246503295,2.98828125,62.915233039476,38.14453125);
+);
+out; &gt;;
+out skel qt;
+</code></pre>
+</div>
+
+<p>From here, you can download the data in various formats and use it under the persmissive <a href="https://opendatacommons.org/licenses/odbl/">ODBL license</a>.</p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2013/revolutionary-street-names"
+this.page.identifier = "/articles/2013/revolutionary-street-names"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Revolutionary street names - March 15, 2013 - András Hann</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:andras at [lastname] dot io"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//github.com/andrashann"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2018 &nbsp;&nbsp;ANDRÁS HANN</span></br> <br>
+<span>This site created with a customized version of the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+.sidenote,
+.marginnote,
+.margin-toggle
+{
+    display: none !important;
+}

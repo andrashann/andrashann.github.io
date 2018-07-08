@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Where have the camels gone? | hann.io</title>
+  <meta name="description" content="teveclub.hu used to be one of the most well-known websites among Hungarian teenagers. It is a Neopets clone where you can raise your own camel: feed it, and ...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2016/where-have-the-camels-gone">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Where have the camels gone?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2016/where-have-the-camels-gone" />
+  <meta property="og:image" content="https://hann.io/assets/og/teveclub_screenshot.png" />
+  <meta property="article:published_time" content="2016-11-30T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/about/index.html">About me</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Where have the camels gone?</h1>
+<p class="subtitle">November 30, 2016</p>
+
+<p><a href="http://www.teveclub.hu">teveclub.hu</a> used to be one of the most well-known websites among Hungarian teenagers. It is a Neopets clone where you can raise your own camel: feed it, and teach it various tricks day by day. I had the feeling that the site was slowly dying. I used data from <a href="https://archive.org/web/">archive.org</a> to verify this hypothesis and I found that it was true: the total number of camels in the system has dropped from the ~320 thousand peak in 2006 to less than 26 thousand in 2018.</p>
+
+<!--more-->
+<p><figure class="fullwidth"><img src="/assets/img/teveclub_chart.png" /><figcaption><span></span></figcaption></figure></p>
+
+<p>This pattern does not look promising. I have a camel on this site since January 21, 2003,<label for="margin-figure-id" class="margin-toggle">⊕</label><input type="checkbox" id="margin-figure-id" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/teveclub_champagne.gif" /><br />My camel on teveclub.hu – he’s drinking champagne.</span> and I am always a bit scared that the owners may end up shutting down the website for good.</p>
+
+<p>The chart is generated fully programmatically; <a href="https://gist.github.com/andrashann/0e364ca279b187bbf3eadc5f2f475a08">the code and the final data table are available on GitHub</a>. It was a good exercise to practice scraping web data in Python as well as the various options in Matplotlib.</p>
+
+<p>Luckily, the website has a page where they display the count of all camels, so the logic to get the data is simple:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for each year:
+    check archive.org for links to individual snapshots
+
+    for each snapshot:
+        find number of camels
+        save snapshot date
+        save count of camels
+
+plot (date, count) pairs
+</code></pre>
+</div>
+
+<p>The code in the notebook could be used for any other historical investigation, for example property prices or the number of available used cars in a given location. Of course this assumes that the data is indeed backed up, but this is the case for most large websites.</p>
+
+<p><em>Note: the analysis was originally conducted in November 2016, however, this article was written in 2018. I also reran the code to include more recent data.</em></p>
+
+<p><em>Cover image: Screenshot of teveclub.hu from 2005 retrieved from <a href="https://web.archive.org/web/20051215061113/http://teveclub.hu:80/">web.archive.org</a></em></p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2016/where-have-the-camels-gone"
+this.page.identifier = "/articles/2016/where-have-the-camels-gone"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Where have the camels gone? - November 30, 2016 - András Hann</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:andras at [lastname] dot io"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//github.com/andrashann"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2018 &nbsp;&nbsp;ANDRÁS HANN</span></br> <br>
+<span>This site created with a customized version of the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

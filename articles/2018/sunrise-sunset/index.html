@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sunrise, sunset | hann.io</title>
+  <meta name="description" content="I grew up in Budapest and moved to the Netherlands a few years ago. I could not ignore the fact that the Sun has very different patterns: it rises later and ...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2018/sunrise-sunset">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Sunrise, sunset" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2018/sunrise-sunset" />
+  <meta property="og:image" content="https://hann.io/assets/og/sunrise_sunset_ams.jpg" />
+  <meta property="article:published_time" content="2018-03-08T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/about/index.html">About me</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Sunrise, sunset</h1>
+<p class="subtitle">March 8, 2018</p>
+
+<p>I grew up in Budapest and moved to the Netherlands a few years ago. I could not ignore the fact that the Sun has very different patterns: it rises later and sets later here than in Budapest. However, this difference is not uniform: my feeling was that the sun rises much later and sets about the same time during the winter. I saw the inverse in the summer: Dutch summer evenings are much longer, but dawn does not lag behind that much. I wanted to verify this feeling in a scalable manner, so I created a <a href="http://hann.io/sunrise-sunset/">website</a> (code <a href="https://github.com/andrashann/sunrise-sunset">here</a>) where you can pick two arbitrary locations on the globe and see a graph with their dawn/dusk times through the year.</p>
+
+<!--more-->
+<p><figure class="fullwidth"><img src="/assets/img/sunrise_sunset.png" /><figcaption><span><a href="http://hann.io/sunrise-sunset">The map and the sunrise/sunset chart</a></span></figcaption></figure></p>
+
+<p>To be precise, the map shows the times of civil twilight. According to the Wikipedia article on <a href="https://en.wikipedia.org/wiki/Twilight#Civil_twilight">twilight</a>, <em>under clear weather conditions, civil twilight approximates the limit at which solar illumination suffices for the human eye to clearly distinguish terrestrial objects.</em> In other words, this is when you or I would say that it is now dark outside.</p>
+
+<p>There are many intersting comparisons one can make.</p>
+
+<ul>
+  <li>Iceland vs The Democratic Republic of the Congo: extreme within-year differences vs almost constant sunrise/sunset times.</li>
+  <li>Bergen (Norway) and Málaga (Spain) are both in Europe and in the same time zone, yet their patterns are quite different.</li>
+  <li>There can be half-hour differences between locations even within a country as small as Hungary.</li>
+  <li>New South Wales vs Queensland in Australia: NSW has DST, Queensland does not.</li>
+</ul>
+
+<p>I encourage everyone to play around with the map and compare these places – or whatever location comes to their mind.</p>
+
+<h2 id="what-did-i-learn">What did I learn?</h2>
+
+<p>In addition to verifying my hypothesis, building this website was a great learning experience. This was the first time I really used JavaScript. I learnt how to combine data from multiple APIs, used various open source packages, and wrote quite a bit of logic myself as well. All in all, I used:</p>
+
+<ul>
+  <li><a href="https://getbootstrap.com/">Bootstrap</a> for the general layout</li>
+  <li><a href="https://timezonedb.com">timezonedb.com</a>’s API to get time zone information based on geographic coordinates</li>
+  <li><a href="https://nominatim.openstreetmap.org/">Nominatim</a>, an OpenStreetMap API to get the name of the location that was chosen</li>
+  <li><a href="https://github.com/mourner/suncalc">SunCalc</a> to calculate dawn/dusk times</li>
+  <li><a href="https://github.com/datejs/Datejs">Datejs</a> to work with dates</li>
+  <li><a href="http://c3js.org/">C3.js</a> for the graph</li>
+  <li><a href="http://leafletjs.com/">Leaflet</a> for the map</li>
+  <li><a href="https://github.com/pointhi/leaflet-color-markers">leaflet-color-markers</a> for the orange marker on the map.</li>
+  <li><a href="https://fonts.google.com/">Google Fonts</a> for the typeface (Crimson Text)</li>
+</ul>
+
+<p><em>Cover image: Sunset in Amsterdam. Photo by the Author, 2016. Creative Commons CC BY-NC-SA 4.0</em></p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2018/sunrise-sunset"
+this.page.identifier = "/articles/2018/sunrise-sunset"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Sunrise, sunset - March 8, 2018 - András Hann</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:andras at [lastname] dot io"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//github.com/andrashann"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2018 &nbsp;&nbsp;ANDRÁS HANN</span></br> <br>
+<span>This site created with a customized version of the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>
