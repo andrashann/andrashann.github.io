@@ -5,9 +5,27 @@
     <description>András Hann&#39;s blog showcasing personal projects</description>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Oct 2018 20:36:28 +0200</pubDate>
-    <lastBuildDate>Thu, 11 Oct 2018 20:36:28 +0200</lastBuildDate>
+    <pubDate>Thu, 03 Jan 2019 19:43:42 +0100</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2019 19:43:42 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>EXPECT A HAPPY HOBBY</title>
+        <description>&lt;p&gt;Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.&lt;label for=&quot;sn-id-relax&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-relax&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just &lt;em&gt;very&lt;/em&gt; similar. &lt;/span&gt; Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.&lt;/p&gt;
+
+&lt;p&gt;I started thinking about this when I realized that I had never seen a Russian license plate with letters that do not also appear in the Latin alphabet. So I started to wonder about two things: is this observation true in general? If so, what words could we make up that would consist only of such letters?&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 02 Dec 2018 00:00:00 +0100</pubDate>
+        <link>https://hann.io/articles/2018/expect-a-happy-hobby</link>
+        <guid isPermaLink="true">https://hann.io/articles/2018/expect-a-happy-hobby</guid>
+        
+        
+        <category>python</category>
+        
+        <category>language</category>
+        
+      </item>
     
       <item>
         <title>Nicely formatted transit schedules</title>
