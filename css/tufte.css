@@ -175,7 +175,7 @@
 
 #disqus_box {
   padding-top: 2em;
-  width: 55%; }
+  width: 60%; }
 
 @media screen and (max-width: 760px) {
   #disqus_box {
@@ -194,15 +194,13 @@ html, body {
   height: 100%; }
 
 html {
-  text-align: baseline;
+  vertical-align: baseline;
   font-size: 11px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-@media screen and (min-width: 800px) {
-  html {
-    font-size: 12px; } }
-@media screen and (min-width: 900px) {
+/*@media screen and (min-width: 800px){ html{ font-size: 12px;} }*/
+@media screen and (min-width: 760px) {
   html {
     font-size: 13px; } }
 @media screen and (min-width: 1000px) {
@@ -228,14 +226,14 @@ p > a {
   text-decoration: none; }
 
 body {
-  width: 87.5%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   /*padding-left: 6%;*/
   font-family: et-bembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   background-color: #fffff8;
   color: #111;
-  max-width: 1200px;
+  max-width: 1100px;
   counter-reset: sidenote-counter; }
 
 @media screen and (max-width: 760px) {
@@ -272,6 +270,12 @@ p .subtitle {
   display: block;
   line-height: 1.08888888888889; }
 
+div.date-and-lang {
+  margin-top: 0.2rem;
+  width: 100%;
+  line-height: 1rem;
+  display: flex; }
+
 p, ol, ul {
   font-size: 1.4rem; }
 
@@ -292,6 +296,10 @@ blockquote p {
 blockquote footer {
   width: 45%;
   text-align: right; }
+
+sup {
+  font-size: 0.8rem;
+  line-height: 1; }
 
 .sans {
   font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
@@ -369,6 +377,57 @@ th, td {
 
 /* -- End of Table Styling section --*/
 /* Basic Layout stuff --*/
+/* index page stuff */
+main.indexpage {
+  margin-top: 20px;
+  grid-area: m; }
+
+.indexpage-sidebar {
+  grid-area: n;
+  background: #faf5dc;
+  margin: 0 0 0 1rem;
+  padding: 1rem; }
+
+.indexpage-sidebar p {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.3rem; }
+
+.indexpage-sidebar h1 {
+  margin-top: 0.5rem; }
+
+body.indexpage #container {
+  display: grid;
+  grid-template-columns: auto 300px;
+  grid-template-rows: 100%;
+  grid-template-areas: "m n"; }
+
+li.listing-final {
+  text-align: center;
+  font-size: 1.1rem; }
+
+@media screen and (max-width: 760px) {
+  body.indexpage #container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "m" "n"; }
+
+  .indexpage-sidebar {
+    grid-area: n;
+    margin: 0;
+    padding: 1rem; }
+
+  .indexpage-sidebar img {
+    max-width: 400px; }
+
+  .indexpage-sidebar p {
+    font-size: 1.5rem;
+    line-height: 2rem; }
+
+  li.listing-final {
+    display: none; } }
+/* end of index page */
 article {
   position: relative;
   padding: 1 rem 0rem 2.5rem 0rem; }
@@ -387,26 +446,27 @@ li {
   margin: 0.5em 0; }
 
 figure, figure img.maincolumn {
-  max-width: 55%;
+  width: 60%;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin-bottom: 1em; }
 
-figcaption {
+.sidenote, .marginnote, figcaption {
   float: right;
   clear: right;
-  margin-right: -60%;
+  margin-right: -66.6%;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.0rem;
   line-height: 1.6;
   vertical-align: baseline;
   position: relative;
-  width: 50%; }
+  width: 60%; }
 
 @media screen and (max-width: 760px) {
   figure {
-    display: table; }
+    display: table;
+    width: 100%; }
 
   figure img {
     display: block; }
@@ -435,18 +495,6 @@ figure.fullwidth figcaption {
 img {
   max-width: 100%; }
 
-.sidenote, .marginnote {
-  float: right;
-  clear: right;
-  margin-right: -60%;
-  width: 50%;
-  margin-top: 0;
-  margin-bottom: 1.96rem;
-  font-size: 1.0rem;
-  line-height: 1.96;
-  vertical-align: baseline;
-  position: relative; }
-
 li .sidenote, li .marginnote {
   margin-right: -80%; }
 
@@ -474,8 +522,8 @@ blockquote .sidenote, blockquote .marginnote {
   color: #a00000;
   top: 0rem; }
 
-p, footer, div.table-wrapper, div.mathblock {
-  width: 55%; }
+p, div.table-wrapper, div.mathblock {
+  width: 60%; }
 
 div.table-wrapper {
   overflow-x: auto; }
@@ -506,7 +554,7 @@ pre {
   overflow-x: auto; }
 
 .fullwidth, li.listing div {
-  max-width: 100%; }
+  width: 100%; }
 
 .full-width .sidenote, .full-width .sidenote-number, .full-width .marginnote {
   display: none; }
@@ -579,7 +627,10 @@ label.margin-toggle:not(.sidenote-number) {
 .smaller {
   font-size: 80%; }
 
-header > nav.group, body footer {
+header {
+  border-bottom: 2px solid #a00000; }
+
+header > nav.group {
   width: 95%;
   padding-top: 2rem; }
 
@@ -590,7 +641,7 @@ nav.group a.active:after {
   content: " >"; }
 
 header > nav a {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -600,7 +651,7 @@ header > nav a {
   display: inline-block;
   float: left;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.4rem;
   padding-right: 2rem;
   vertical-align: baseline; }
 
@@ -615,6 +666,10 @@ ul.footer-links, .credits {
   text-align: center;
   margin: 0 auto; }
 
+ul.footer-links {
+  width: 100%;
+  padding: 0; }
+
 ul.footer-links li {
   display: inline;
   padding: 0.5rem 0.25rem; }
@@ -628,10 +683,10 @@ ul.footer-links li {
     color: #a00000; }
 
 body.full-width, .content-listing, ul.content-listing li.listing {
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0% 5%; }
+  padding: 0% 0%; }
 
 @media screen and (max-width: 760px) {
   body.full-width, .content-listing, ul.content-listing li.listing {
@@ -736,8 +791,8 @@ hr.slender {
 /* --- Icomoon icon fonts CSS --*/
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?rgwlb8");
-  src: url("../fonts/icomoon.eot?#iefixrgwlb8") format("embedded-opentype"), url("../fonts/icomoon.woff?rgwlb8") format("woff"), url("../fonts/icomoon.ttf?rgwlb8") format("truetype"), url("../fonts/icomoon.svg?rgwlb8#icomoon") format("svg");
+  /*src:url('../fonts/icomoon.eot?rgwlb8');*/
+  src: url("../fonts/icomoon.ttf?rgwlb8") format("truetype");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -754,22 +809,22 @@ hr.slender {
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-pencil:before {
-  content: "\e600"; }
+  content: "\e905"; }
 
 .icon-film:before {
-  content: "\e60f"; }
+  content: "\e913"; }
 
 .icon-calendar:before {
-  content: "\e601"; }
+  content: "\e953"; }
 
 .icon-link:before {
-  content: "\e602"; }
+  content: "\e9cb"; }
 
 .icon-info:before {
-  content: "\e603"; }
+  content: "\ea0c"; }
 
 .icon-cancel-circle:before {
-  content: "\e604"; }
+  content: "\ea0d"; }
 
 .icon-checkmark-circle:before {
   content: "\e605"; }
@@ -778,27 +833,27 @@ hr.slender {
   content: "\e606"; }
 
 .icon-mail:before {
-  content: "\e607"; }
-
-.icon-googleplus:before {
-  content: "\e608"; }
+  content: "\ea83"; }
 
 .icon-facebook:before {
-  content: "\e609"; }
+  content: "\ea90"; }
 
 .icon-twitter:before {
-  content: "\e60a"; }
+  content: "\ea96"; }
 
 .icon-feed:before {
-  content: "\e60b"; }
+  content: "\e91d"; }
 
 .icon-flickr:before {
-  content: "\e60c"; }
+  content: "\eaa3"; }
+
+.icon-linkedin:before {
+  content: "\eac9"; }
 
 .icon-github:before {
-  content: "\e60d"; }
+  content: "\eab0"; }
 
 .icon-box-add:before {
-  content: "\e60e"; }
+  content: "\e95e"; }
 
 /*-- End of Icomoon icon font section --*/

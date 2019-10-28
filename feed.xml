@@ -5,13 +5,45 @@
     <description>András Hann&#39;s blog showcasing personal projects</description>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Jan 2019 19:43:42 +0100</pubDate>
-    <lastBuildDate>Thu, 03 Jan 2019 19:43:42 +0100</lastBuildDate>
+    <pubDate>Tue, 29 Oct 2019 09:38:39 +0100</pubDate>
+    <lastBuildDate>Tue, 29 Oct 2019 09:38:39 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>The autumn of 1929 – the story of two hikes</title>
+        <description>&lt;p&gt;I was going through the documents of my great-grandfather, Lajos Frenyó when I found a couple of folded papers in one of the notebooks. I had already known that he really liked hiking but I did not have any material proof of this hobby apart from the photo used as the cover image of this post. That is, up until that moment, because these papers contained a very detailed account documenting two trips in the Tatra mountains. This post contains these two reports with my comments.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Oct 2019 00:00:00 +0100</pubDate>
+        <link>https://hann.io/articles/2019/autumn-of-1929</link>
+        <guid isPermaLink="true">https://hann.io/articles/2019/autumn-of-1929</guid>
+        
+        
+        <category>hiking</category>
+        
+        <category>maps</category>
+        
+      </item>
+    
+      <item>
+        <title>1929 ősze – két túra története</title>
+        <description>&lt;p&gt;Dédapám, Frenyó Lajos iratait rendezgettem, amikor az egyik füzetében néhány összehajtott lapot találtam. Tudtam róla, hogy szeretett túrázni, de korábban egy (a bejegyzés borítóképeként is használt) fényképen kívül nem igazán volt más emlék erről a hobbijáról. Egészen eddig, mert ez a pár lap két tátrai túra beszámolóját tartalmazta – nem csak egyszerű túraleírásként, hanem részletes dokumentációként szolgálva. Ebben a bejegyzésben a két beszámoló szöveghű leirata olvasható az én megjegyzéseimmel, kiegészítéseimmel.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Oct 2019 00:00:00 +0100</pubDate>
+        <link>https://hann.io/articles/2019/1929-osze</link>
+        <guid isPermaLink="true">https://hann.io/articles/2019/1929-osze</guid>
+        
+        
+        <category>hiking</category>
+        
+        <category>maps</category>
+        
+      </item>
+    
+      <item>
         <title>EXPECT A HAPPY HOBBY</title>
-        <description>&lt;p&gt;Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.&lt;label for=&quot;sn-id-relax&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-relax&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just &lt;em&gt;very&lt;/em&gt; similar. &lt;/span&gt; Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.&lt;/p&gt;
+        <description>&lt;p&gt;Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.&lt;label for=&quot;sn-id-relax&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;sn-id-relax&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just &lt;em&gt;very&lt;/em&gt; similar. &lt;/span&gt; Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.&lt;/p&gt;
 
 &lt;p&gt;I started thinking about this when I realized that I had never seen a Russian license plate with letters that do not also appear in the Latin alphabet. So I started to wonder about two things: is this observation true in general? If so, what words could we make up that would consist only of such letters?&lt;/p&gt;
 
@@ -135,7 +167,7 @@
     
       <item>
         <title>How far up does the tram go?</title>
-        <description>&lt;p&gt;Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61.&lt;label for=&quot;sn-id-trams&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-trams&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; Service on line 58 has been suspended since 1977. In this case, “suspension” includes the tracks having been removed and paved over. Based on this, I do not think service will restart anytime soon. &lt;/span&gt; But how far up do these actually go? And which one is the steepest?&lt;/p&gt;
+        <description>&lt;p&gt;Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61.&lt;label for=&quot;sn-id-trams&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;sn-id-trams&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; Service on line 58 has been suspended since 1977. In this case, “suspension” includes the tracks having been removed and paved over. Based on this, I do not think service will restart anytime soon. &lt;/span&gt; But how far up do these actually go? And which one is the steepest?&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 25 Nov 2013 00:00:00 +0100</pubDate>
@@ -148,24 +180,6 @@
         <category>hungary</category>
         
         <category>transportation</category>
-        
-      </item>
-    
-      <item>
-        <title>Revolutionary street names</title>
-        <description>&lt;p&gt;Every Hungarian knows that almost every village in the country will have a street named after Lajos Kossuth, revolutionary and politician, and another named after Sándor Petőfi, an emblematic hero-poet – both of whom took part in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1848&quot;&gt;Hungarian Revolution of 1848&lt;/a&gt;. But where exactly are these streets?&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 15 Mar 2013 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2013/revolutionary-street-names</link>
-        <guid isPermaLink="true">https://hann.io/articles/2013/revolutionary-street-names</guid>
-        
-        
-        <category>maps</category>
-        
-        <category>hungary</category>
-        
-        <category>openstreetmap</category>
         
       </item>
     
