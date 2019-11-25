@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Alphabetical sorting is hard | hann.io</title>
+  <meta name="description" content="It really was a great idea. As usual, I took a problem that I randomly ran into and wanted to find a solution to. I was not sure if I could implement the sol...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2019/sorting-is-hard">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Alphabetical sorting is hard" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2019/sorting-is-hard" />
+  <meta property="og:image" content="https://hann.io/assets/og/sorting_is_hard.jpg" />
+  <meta property="article:published_time" content="2019-11-24T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>Alphabetical sorting is hard</h1>
+<p class="subtitle">November 24, 2019
+
+</p>
+
+<p>It really was a great idea. As usual, I took a problem that I randomly ran into and wanted to find a solution to. I was not sure if I could implement the solution, but I knew I could describe it. It happened when I was working on a project where I got some data about municipalities in Hungary. I thought it would be handy to sort them alphabetically so that the user of the final product can easily find the place they are interested in. However, due to the unusual letters in the Hungarian alphabet, such as <em>ő</em> or <em>gy</em>, collation is not trivial. But I knew I could find a way to solve this!</p>
+
+<!--more-->
+
+<p>First, I realized that a standard algorithm might not know how to correctly sort <em>o</em>, <em>ó</em>, <em>ö</em>, and <em>ő</em>. In Hungarian, these are not just diacritics on a letter, but are considered as completely separate letters (they sound different as well), so when sorted, <em>o</em> &lt; <em>ő</em>. Although this is a complication, it is not a big one: I can provide a correct alphabetical ordering to my algorithm, which will then know how to do this.</p>
+
+<p>Second, I realized that the situation is more complicated with the digraphs (<em>cs</em>, <em>dz</em>, <em>gy</em>, <em>ly</em>, <em>ny</em>, <em>sz</em>, <em>ty</em>, <em>zs</em>) and the trigraph <em>dzs</em>. These are considered to be one letter (even though displayed using two glyphs) and they come after the single-glyph letters in an alphabetically ordered list. Therefore, <em>cudar</em> comes before <em>csak</em>. Okay, no problem: find all instances of these, turn them into some symbol, and add them to the custom list. So, for example, we will have <em>cudar</em> and <em>$ak</em>, which we can sort if we know that <em>c</em> &lt; <em>$</em> &lt; <em>d</em>.</p>
+
+<p>And we are done!</p>
+
+<p>Well, of course not.</p>
+
+<p>The glyphs of a digraph next to each other might not mean the digraph itself. For example, <em>s</em> and <em>z</em> do not only occur next to each other when they stand for <em>sz</em>. This can easily happen in two situations. First, in compound words: <em>vaszár</em> (a compound word of iron+lock) consists of <em>vas</em> + <em>zár</em>, so <em>s</em> and <em>z</em> are two separate letters, not <em>sz</em>. Second, since Hungarian is an agglutinative language, there is also a chance for false digraphs where prefixes and suffixes meet the word (or each other). An example for this is <em>malacság</em>, (<em>malac</em> + <em>-ság</em>, literally: piglet+ness, meaning smut (“obscene or lascivious talk, writing, or pictures.”)).</p>
+
+<p>And this is just a start of our woes! Gemination, or the lengthening of consonants is another feature of the Hungarian language. In case you are not familiar with it, think about the Italian expression <em>pizza quattro formaggi</em> – all of these three words have a geminated consonant, whose pronunciation is indeed longer than a single one. In Hungarian, digraphs can also be geminated, but only the first glyph is written twice. For example, <em>gy</em> + <em>gy</em> = <em>ggy</em>, like in <em>meggy</em> (sour cherry; not the same as <em>megy</em>, which means <em>goes</em>).</p>
+
+<p>Substituting with tokens does not work in these situations. While you could try to replace <em>ccs</em> in <em>meccs</em> (football match) with two of the token <em>$</em> we introduced above, it is not enough. For example, <em>vasszekér</em>, <em>vas</em> + <em>szekér</em>, a horse-drawn carriage made of iron (literally: iron+cart), has <em>ssz</em>, but it is not <em>sz</em> + <em>sz</em>, just <em>s</em> + <em>sz</em>. Or think about the previous example of <em>vaszár</em>, which has <em>s</em> + <em>z</em> ≠ <em>sz</em>. A similar situation appears in <em>vízszerelő</em>, <em>víz</em> + <em>szerelő</em>, plumber (literally: water+repairman), where there is also potential ambiguity: is it <em>zs</em> + <em>z</em> or <em>z</em> + <em>sz</em>? Another great example is the two words <em>meggyez</em> (literally: to put/get sour cherry on something; <em>“összemeggyezte az ingét”</em> = <em>“he got a sour cherry stain on his shirt”</em>) and <em>meggyőz</em> (<em>meg-</em> + <em>győz</em>, to convince someone). A simple algorithm looking at each glyph would think that <em>meggyez</em> comes first and <em>meggyőz</em> comes second. This is not true, since <em>meggyez</em> is sorted as [<em>m e gy gy e z</em>], therefore it comes after [<em>m e g gy ő z</em>].</p>
+
+<p>At this point I had to realize that there is no way to properly sort Hungarian words without a dictionary to split up compound words. And even if we have such a list, it might not even solve all the problems that are caused by prefixes/suffixes.</p>
+
+<p>Well, the next step was clear as the sky: I have to implement an algorithm in Python where you pass a list of words and it returns a correctly collated list thereof. What a great personal project would it be to showcase on my website!</p>
+
+<p>Then, two things happened.</p>
+
+<p>First, I realized that this, simply put, is not an important problem. Or, at least, not important enough to me to spend the required amount of time on it. How frequent it is that one has to collate a list, where orthographic precision is extremely important and a manual check is not feasible? Not very.</p>
+
+<p>Second, after giving up on programming anything for this topic, I decided to just write an article about this discovery. To gather the relevant vocabulary in English, I went to the <a href="https://en.wikipedia.org/w/index.php?title=Hungarian_alphabet&amp;oldid=918569808">Wikipedia page for the Hungarian alphabet</a>. The last sentence of the <em>Alphabetical ordering (collation)</em> section is the following:</p>
+
+<blockquote>
+  <p>These rules [regarding digraphs] make Hungarian alphabetic ordering algorithmically difficult (one has to know the correct segmentation of a word to sort it correctly), which was a problem for computer software development.</p>
+</blockquote>
+
+<p>Well, there goes my Big Discovery.</p>
+
+<p><span style="display:block;width:100%;text-align:center">❧</span></p>
+
+<p>Cover image: a page of <em>Magyar Értelmező Késziszótár</em>, showing the entry for <em>betűrend</em> (alphabetical ordering). Photo by the Author, 2019. Creative Commons CC BY-NC-SA 4.0</p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2019/sorting-is-hard"
+this.page.identifier = "/articles/2019/sorting-is-hard"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Alphabetical sorting is hard - November 24, 2019 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>
