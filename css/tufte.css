@@ -38,7 +38,7 @@
   margin-bottom: 15px; }
 
 .highlight {
-  background: #fffff8; }
+  background: #faf5dc; }
   .highlight .c {
     color: #998;
     font-style: italic; }
@@ -305,11 +305,26 @@ sup {
   font-family: "Gill Sans", "Gill Sans MT", "Lato", Calibri, sans-serif;
   letter-spacing: .03em; }
 
-pre, pre code, p code, p pre code {
+pre, pre code, p code, li code, p pre code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1.2rem;
   line-height: 1.71428571;
-  margin-top: 1.71428571rem; }
+  margin-top: 1.71428571rem;
+  background-color: #faf5dc; }
+
+pre {
+  border: 1px solid #dbd5b2;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 4px;
+  padding: 2px; }
+
+code.highlighter-rouge {
+  background-color: #faf5dc;
+  padding: 2px;
+  border: 1px solid #dbd5b2;
+  border-radius: 4px; }
 
 h1 code, h2 code, h3 code {
   font-size: 0.80em; }
@@ -437,9 +452,8 @@ section {
   padding-bottom: 1rem; }
 
 ul, ol {
-  width: 45%;
-  -webkit-padding-start: 5%;
-  -webkit-padding-end: 5%;
+  width: 55%;
+  padding-left: 5%;
   /*list-style-type: none; */ }
 
 li {
@@ -450,6 +464,10 @@ figure, figure img.maincolumn {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin-bottom: 1em; }
+
+.highlight {
+  width: 60%;
+  background-color: #faf5dc; }
 
 .sidenote, .marginnote, figcaption {
   float: right;
@@ -532,11 +550,11 @@ div.table-wrapper {
   p, footer, div.mathblock {
     width: 100%; }
 
-  pre code {
-    width: 87.5%; }
+  pre code, .highlight {
+    width: 100%; }
 
   ul, ol {
-    width: 85%; }
+    width: 90%; }
 
   figure {
     max-width: 100%; }
@@ -550,7 +568,7 @@ div.table-wrapper {
 
 pre {
   width: 52.5%;
-  padding-left: 2.5%;
+  /*padding-left: 2.5%;*/
   overflow-x: auto; }
 
 .fullwidth, li.listing div {
