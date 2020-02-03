@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introducing gpxslicer | hann.io</title>
+  <meta name="description" content="I have recently released my first Python package, gpxslicer, a  simple tool to cut GPX track logs into smaller segments. It is now available on GitHub and Py...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2020/introducing-gpxslicer">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Introducing gpxslicer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2020/introducing-gpxslicer" />
+  <meta property="og:image" content="https://hann.io/assets/og/introducing-gpxslicer.jpg" />
+  <meta property="article:published_time" content="2020-01-28T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>Introducing gpxslicer</h1>
+<p class="subtitle">January 28, 2020
+
+</p>
+
+<p>I have recently released my first Python package, <code class="highlighter-rouge">gpxslicer</code>, a  simple tool to cut GPX track logs into smaller segments. It is now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.</p>
+
+<!--more-->
+
+<p>I often create paper maps for my hikes. Not only are they there even if the battery of my phone or GPS dies, but I can also put custom information on them. Such information is typically a point: a checkpoint for a hike, an interesting place to see, or a geocache.</p>
+
+<h2 id="slicing-a-track-at-an-arbitrary-set-of-points">Slicing a track at an arbitrary set of points</h2>
+
+<p>In addition to points of interest, it is also very useful to know the distance between given points (e.g. from a village to the peak of the nearby mountain).</p>
+
+<p><figure><img src="/assets/img/gpxslicer/okt.jpg" /><figcaption><span>Photo of a map I created for hiking the <a href="https://en.wikipedia.org/wiki/National_Blue_Trail">Blue Trail</a>, with the village of <a href="https://hiking.waymarkedtrails.org/#?map=13!48.4754!21.4708">Bózsva</a> in the middle. Black dots indicate segment boundaries; numbers show the distance between the nearest black dots in ten meters. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>, <a href="https://www.heyjoe.hu">heyjoe.hu</a>, <a href="https://www.geocaching.hu">geocaching.hu</a>. Map tiles © <a href="https://turistautak.hu">turistautak.hu</a>, <a href="https://www.mapbox.com">Mapbox</a>, <a href="http://hdyc.neis-one.org/?Domcsi">dömcsi</a>. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+
+<p>The manual way of adding such distances to a map is to create the track between consecutive points by hand, importing these tracks into some <label for="sn-id-qgis" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="sn-id-qgis" class="margin-toggle" /><span class="marginnote">My choice of GIS software is <a href="https://www.qgis.org">QGIS</a>. I have used it in other projects as well: one about <a href="https://hann.io/articles/2013/revolutionary-street-names/">street names named after revolutionaries</a>, and another one about <a href="https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus/">bus stops named after liquor stores</a>. </span>GIS software, and adding the length of the tracks as a label on the map.</p>
+
+<p>An algorithmic way to approach the problem is the following: for each desired cut point, find the closest track point (a point that lies on the track), and then cut the GPX track object there into two separate tracks. For reference, store the identified cut points as well, as they might not be the same as the input cut points. After this, we only have to do the last step: importing and labelling.</p>
+
+<h2 id="slicing-a-track-at-a-given-interval">Slicing a track at a given interval</h2>
+
+<p>By finding points at a given interval along a track, we can create markers (e.g. at every kilometer) to enable easy distance measurements between any two points of the hike.</p>
+
+<p><figure><img src="/assets/img/gpxslicer/pieterpad.jpg" /><figcaption><span>Photo of a page of a booklet I created to collect stamps while hiking the <a href="https://en.wikipedia.org/wiki/Pieterpad">Pieterpad</a>, with the town of <a href="https://hiking.waymarkedtrails.org/#?map=13!53.3341!6.5081">Winsum</a> in the middle. Black dots with a with center indicate 1 kilometer segments along the trail. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>. Map © the Author, CC-BY-SA-NC-3.0. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+
+<p>Alternatively, our aim could be to keep a given speed during a hike. In this case we can find points at intervals based on the distance we expect to cover in a given time period at this speed, which then allows us to see whether we are still on time. For example, in one instance I absolutely had to catch a given bus at the end of my hike as there was no other option to get home that day. Therefore, I wanted to make sure that I do not lose speed. I calculated that I had to walk at at least 4 km/h in order to safely catch the bus. Based on this, I put a point on the track every 2 kilometers – if thirty minutes passed since the previous point and I had not reached the next one, I knew that I was going too slow.</p>
+
+<p>A simple algorithm would be the following: start at the beginning of the track and calculate the cumulative distance from there for each of the track points. If we passed a multiple of our target segment distance (e.g. if the previous point, point <em>A</em> was at 998 meters and this one, point <em>B</em> is at 1001), cut the track. Do not restart counting the distance as there would be a cumulative bias (we would add a couple of meters at every point), but keep counting from the very beginning.</p>
+
+<p>This algorithm works well if extreme precision is not required (and we have track points frequently enough). <label for="sn-id-calc" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="sn-id-calc" class="margin-toggle" /><span class="marginnote">The precise calculation requires only simple coordinate geometry, as outlined <a href="https://math.stackexchange.com/a/1630886">here</a>. However, if we want to be really precise, coordinates have to be converted to a local projected coordinate reference system, due to fact that unlike geographical coordinates, projected CRSs have <a href="https://desktop.arcgis.com/en/arcmap/10.6/map/projections/about-projected-coordinate-systems.htm">“constant lengths, angles, and areas across the two dimensions”</a>. This is out of the scope of the initial release of <code class="highlighter-rouge">gpxslicer</code>, but the reader is invited to submit a pull request to the <a href="https://github.com/andrashann/gpxslicer/issues/1">code</a> if they decide to implement it.  </span>If we want to be more precise, we can calculate the exact 1000 meter point on the segment by finding it on the line that connects point <em>A</em> and point <em>B</em>.</p>
+
+<h2 id="enter-gpxslicer">Enter gpxslicer</h2>
+
+<p>Doing these tasks by hand is tedious and, since the programmatic approach is quite simple, not a sensible use of time. This is why I set off to write <code class="highlighter-rouge">gpxslicer</code>, now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. In it, I implemented the two algorithms outlined above. Luckily, there is a great Python library called <code class="highlighter-rouge">gpxpy</code> (<a href="https://github.com/tkrajina/gpxpy">website</a>), which does all the heavy lifting in the background for importing, manipulating, and exporting GPX files – I just had to put my custom logic on top of it.</p>
+
+<p>In the end, <code class="highlighter-rouge">gpxslicer</code> became primarily a command line tool with two utility functions (<code class="highlighter-rouge">slice_gpx_at_points()</code> and <code class="highlighter-rouge">slice_gpx_at_interval()</code>) that can be imported from its Python package if you want to use it in your project.</p>
+
+<p>If you would like to learn how to use <code class="highlighter-rouge">gpxslicer</code>, please read its <a href="https://github.com/andrashann/gpxslicer/blob/master/README.md">readme file</a>, which describes it in great detail.</p>
+
+<p>If you have any questions or comments, leave them below. In case you would like to contribute to <code class="highlighter-rouge">gpxslicer</code>, GitHub issue submissions and pull requests are more than welcome!</p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2020/introducing-gpxslicer"
+this.page.identifier = "/articles/2020/introducing-gpxslicer"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Introducing gpxslicer - January 28, 2020 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

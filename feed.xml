@@ -5,9 +5,27 @@
     <description>András Hann&#39;s blog showcasing personal projects</description>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Jan 2020 11:55:58 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Jan 2020 11:55:58 +0100</lastBuildDate>
+    <pubDate>Mon, 03 Feb 2020 23:11:15 +0100</pubDate>
+    <lastBuildDate>Mon, 03 Feb 2020 23:11:15 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Introducing gpxslicer</title>
+        <description>&lt;p&gt;I have recently released my first Python package, &lt;code class=&quot;highlighter-rouge&quot;&gt;gpxslicer&lt;/code&gt;, a  simple tool to cut GPX track logs into smaller segments. It is now available on &lt;a href=&quot;https://github.com/andrashann/gpxslicer&quot;&gt;GitHub&lt;/a&gt; and &lt;a href=&quot;https://pypi.org/project/gpxslicer/&quot;&gt;PyPI&lt;/a&gt;. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 28 Jan 2020 00:00:00 +0100</pubDate>
+        <link>https://hann.io/articles/2020/introducing-gpxslicer</link>
+        <guid isPermaLink="true">https://hann.io/articles/2020/introducing-gpxslicer</guid>
+        
+        
+        <category>python</category>
+        
+        <category>gps</category>
+        
+        <category>gis</category>
+        
+      </item>
     
       <item>
         <title>Understanding Overpass, the API of OpenStreetMap</title>
@@ -158,24 +176,6 @@
         <category>openstreetmap</category>
         
         <category>transportation</category>
-        
-      </item>
-    
-      <item>
-        <title>Hungarian municiaplity name prefixes</title>
-        <description>&lt;p&gt;Hungarian municipalities have unique names that consist of one (potentially compound) word. This was not the case until the end of the 19th century: multiple villages could have the same name, sometimes even in the same county. This caused trouble not only for the postal service but also related to taxation and conscription. Hence the standardization: every name must be unique; in case of a duplcate, the municipality names got a prefix based on their general location. I investigated these prefixes: their spatial distribution and the origin of those names.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 06 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://hann.io/articles/2015/hungarian-munipality-name-prefixes</link>
-        <guid isPermaLink="true">https://hann.io/articles/2015/hungarian-munipality-name-prefixes</guid>
-        
-        
-        <category>maps</category>
-        
-        <category>hungary</category>
-        
-        <category>openstreetmap</category>
         
       </item>
     
