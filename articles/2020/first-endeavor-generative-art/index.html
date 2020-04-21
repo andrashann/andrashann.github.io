@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A first endeavor into generative art | hann.io</title>
+  <meta name="description" content="Last year we organized an internal conference at my workplace and I volunteered to put together a booklet with the abstracts of the presentations. I wanted t...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2020/first-endeavor-generative-art/">
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="A first endeavor into generative art" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2020/first-endeavor-generative-art/" />
+  <meta property="og:image" content="https://hann.io/assets/og/generative.jpg" />
+  <meta property="article:published_time" content="2020-04-17T00:00:00+02:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>A first endeavor into generative art</h1>
+<p class="subtitle">April 17, 2020
+
+</p>
+
+<p>Last year we organized an internal conference at my workplace and I volunteered to put together a booklet with the abstracts of the presentations. I wanted to add photos of the authors, but I did not want them to look all the same.<label for="mn-id-actually" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-actually" class="margin-toggle" /><span class="marginnote">Actually, graphic design and layout editing was not new to me, I’ve always had a thing for this field. At some point during my bachelor’s in Economics I even considered moving abroad and studying it instead of finishing that degree. Instead of doing so, I just volunteered to design the faculty magazine. </span> I came up with the idea to have the photos on top of two rectangles of the same size but of two different colors, a bit offset from the photo – every photo should be paired with differently offset rectangles to add some unique design. Of course, I did not want to do this by hand, but that’s what I know Python for.</p>
+
+<!--more-->
+
+<p><figure><img src="/assets/img/progdes/originals.jpg" /><figcaption><span>Initial drawings for different photo layouts. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+
+<p>Looking at the sketches gives a better overview of the idea than trying to describe it in words. We have three objects on top of each other: the two rectangles and the photo. They each take one of the horizontal positions (left, center, right) and one of the vertical positions (top, middle, bottom). Each position may only be taken by one of the objects. The photo must be on the top of the stack, but the order of the two rectangles can be switched. Therefore, we have 3! × 3! × 2! = 72 different potential patterns in this setup.</p>
+
+<p>While I did briefly consider doing this by hand, I quickly realized that it would be too tedious. I also wanted to do the project quickly, so instead of digging into various libraries, I came up with a very simple approach. I would create an SVG image with the two rectangles and the image embedded into it. <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a> is a vector image format described with XML code, so it can be easily read and written by computers – and, albeit somewhat tediously, by  humans. Therefore, I just need to write the header of the file (which is the same for all variations), add the three objects, then end the file appropriately.</p>
+
+<p>To populate these SVG files, I first generated a cross product of the aforementioned dimensions and turned them into a list of lists. Each item has three ordered sublists: [x coordinates for each item; y coordinates for each item; the colors of the two rectangles]. As the next step I shuffle the outer list to have these in a random order and finally populate the SVG files with the generated rectangles and the image loaded from the computer.<label for="mn-id-border" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-border" class="margin-toggle" /><span class="marginnote">I actually created five rectangles: both colored rectangles and the photo got a white frame by having a slightly larger white rectangle behind them. </span> I highly recommend checking out the <a href="https://gist.github.com/andrashann/7e46d0b5ff88e3e8e64ed15033caa8d7">code</a> that I used; it provides a better understanding of what I did. (After all: the code <em>is</em> what I did.)</p>
+
+<p><figure><img src="/assets/img/progdes/output.png" /><figcaption><span>Sample output of varied layouts generated programmatically. Pictures from <a href="https://unsplash.com/">Unsplash</a> via <a href="http://unsample.net/">Unsample</a>. © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+
+<p>And that’s it. This was a very simple project that took me about half an hour to write and saved me probably hours of daunting manual work; I just had to drag the SVGs into my desktop publishing application.</p>
+
+<p>Of course, this was a very basic endeavor into generative art. If you are interested to see more, here is a list of links (in no particular order) to start out your adventure:</p>
+
+<ul>
+  <li>The collection of <a href="https://github.com/aaronpenne/generative_art">Aaron Penne’s artwork</a>, freely available on GitHub</li>
+  <li>The <a href="https://www.reddit.com/r/generative/">/r/generative</a> subreddit</li>
+  <li><a href="https://www.manning.com/books/generative-art"><em>Generative Art</em> by Matt Pearson</a>, a book about creating art using the Processing language</li>
+  <li><a href="https://www.generativehut.com/post/how-to-make-generative-art-feel-natural">A fantastic blog post by Ben Kovach</a> about making generative art feel natural.</li>
+</ul>
+
+<p>Good luck, go out and create art!</p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2020/first-endeavor-generative-art/"
+this.page.identifier = "/articles/2020/first-endeavor-generative-art"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">A first endeavor into generative art - April 17, 2020 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

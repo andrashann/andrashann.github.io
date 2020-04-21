@@ -2,182 +2,441 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hann.io</title>
-    <description>András Hann&#39;s blog showcasing personal projects</description>
+    <description>András Hann's blog showcasing personal projects</description>
+    <image>
+      <url>https://hann.io/assets/og/hann_io.png</url>
+      <title>hann.io | András Hann</title>
+      <link>https://hann.io</link>
+    </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Feb 2020 23:11:15 +0100</pubDate>
-    <lastBuildDate>Mon, 03 Feb 2020 23:11:15 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Mon, 13 Jul 2020 22:50:58 +0200</pubDate>
+    <lastBuildDate>Mon, 13 Jul 2020 22:50:58 +0200</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
     
-      <item>
-        <title>Introducing gpxslicer</title>
-        <description>&lt;p&gt;I have recently released my first Python package, &lt;code class=&quot;highlighter-rouge&quot;&gt;gpxslicer&lt;/code&gt;, a  simple tool to cut GPX track logs into smaller segments. It is now available on &lt;a href=&quot;https://github.com/andrashann/gpxslicer&quot;&gt;GitHub&lt;/a&gt; and &lt;a href=&quot;https://pypi.org/project/gpxslicer/&quot;&gt;PyPI&lt;/a&gt;. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.&lt;/p&gt;
+          
+        <item>
+          <title>A first endeavor into generative art</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/first-endeavor-generative-art/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/generative.jpg" class="attachment-full size-full" alt="A first endeavor into generative art" />
+                  </a>
+                </p>
+            
+            <p>Last year we organized an internal conference at my workplace and I volunteered to put together a booklet with the abstracts of the presentations. I wanted to add photos of the authors, but I did not want them to look all the same. I came up with the idea to have the photos on top of two rectangles of the same size but of two different colors, a bit offset from the photo – every photo should be paired with differently offset rectangles to add some unique design. Of course, I did not want to do this by hand, but that’s what I know Python for.</p>
 
-</description>
-        <pubDate>Tue, 28 Jan 2020 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2020/introducing-gpxslicer</link>
-        <guid isPermaLink="true">https://hann.io/articles/2020/introducing-gpxslicer</guid>
-        
-        
-        <category>python</category>
-        
-        <category>gps</category>
-        
-        <category>gis</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Fri, 17 Apr 2020 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2020/first-endeavor-generative-art/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/first-endeavor-generative-art/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>graphic_design</category>
+          
+          <category>automation</category>
+          
+          <category>generative_art</category>
+          
+        </item>
+      
     
-      <item>
-        <title>Understanding Overpass, the API of OpenStreetMap</title>
-        <description>&lt;p&gt;If you want to use spatial data from &lt;a href=&quot;https://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt;,&lt;label for=&quot;sn-id-whatisosm&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;sn-id-whatisosm&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; OpenStreetMap is more than just a free map: it is also a free database of global geographical data. If you are not familiar with it, check out its &lt;a href=&quot;https://wiki.openstreetmap.org/wiki/Main_Page&quot;&gt;Wiki&lt;/a&gt; to learn more. &lt;/span&gt; one way to get it is via &lt;a href=&quot;http://overpass-api.de/&quot;&gt;Overpass&lt;/a&gt;,&lt;label for=&quot;sn-id-op&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;sn-id-op&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; Read more about the Overpass API and its various endpoints &lt;a href=&quot;https://wiki.openstreetmap.org/wiki/Overpass_API&quot;&gt;here&lt;/a&gt;. &lt;/span&gt; a read-only API of the OpenStreetMap database. While the API is extremely flexible, its unique language, Overpass QL is not very intuitive. This article takes a very simple query and dissects it into its smallest pieces. This will help you understand (and write) such queries.&lt;/p&gt;
+          
+        <item>
+          <title>Introducing gpxslicer</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/introducing-gpxslicer/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/introducing-gpxslicer.jpg" class="attachment-full size-full" alt="Introducing gpxslicer" />
+                  </a>
+                </p>
+            
+            <p>I have recently released my first Python package, <code class="highlighter-rouge">gpxslicer</code>, a  simple tool to cut GPX track logs into smaller segments. It is now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.</p>
 
-</description>
-        <pubDate>Fri, 17 Jan 2020 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2020/understanding-overpass</link>
-        <guid isPermaLink="true">https://hann.io/articles/2020/understanding-overpass</guid>
-        
-        
-        <category>osm</category>
-        
-        <category>overpass</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Tue, 28 Jan 2020 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2020/introducing-gpxslicer/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/introducing-gpxslicer/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>gps</category>
+          
+          <category>gis</category>
+          
+        </item>
+      
     
-      <item>
-        <title>Alphabetical sorting is hard</title>
-        <description>&lt;p&gt;It really was a great idea. As usual, I took a problem that I randomly ran into and wanted to find a solution to. I was not sure if I could implement the solution, but I knew I could describe it. It happened when I was working on a project where I got some data about municipalities in Hungary. I thought it would be handy to sort them alphabetically so that the user of the final product can easily find the place they are interested in. However, due to the unusual letters in the Hungarian alphabet, such as &lt;em&gt;ő&lt;/em&gt; or &lt;em&gt;gy&lt;/em&gt;, collation is not trivial. But I knew I could find a way to solve this!&lt;/p&gt;
+          
+        <item>
+          <title>Understanding Overpass, the API of OpenStreetMap</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/understanding-overpass/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/understanding_overpass.jpg" class="attachment-full size-full" alt="Understanding Overpass, the API of OpenStreetMap" />
+                  </a>
+                </p>
+            
+            <p>If you want to use spatial data from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>,<span class="sidenote"> OpenStreetMap is more than just a free map: it is also a free database of global geographical data. If you are not familiar with it, check out its <a href="https://wiki.openstreetmap.org/wiki/Main_Page">Wiki</a> to learn more. </span> one way to get it is via <a href="http://overpass-api.de/">Overpass</a>,<span class="sidenote"> Read more about the Overpass API and its various endpoints <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">here</a>. </span> a read-only API of the OpenStreetMap database. While the API is extremely flexible, its unique language, Overpass QL is not very intuitive. This article takes a very simple query and dissects it into its smallest pieces. This will help you understand (and write) such queries.</p>
 
-</description>
-        <pubDate>Sun, 24 Nov 2019 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2019/sorting-is-hard</link>
-        <guid isPermaLink="true">https://hann.io/articles/2019/sorting-is-hard</guid>
-        
-        
-        <category>language</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Fri, 17 Jan 2020 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2020/understanding-overpass/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/understanding-overpass/</guid>
+          
+          
+          <category>osm</category>
+          
+          <category>overpass</category>
+          
+        </item>
+      
     
-      <item>
-        <title>The autumn of 1929 – the story of two hikes</title>
-        <description>&lt;p&gt;I was going through the documents of my great-grandfather, Lajos Frenyó when I found a couple of folded papers in one of the notebooks. I had already known that he really liked hiking but I did not have any material proof of this hobby apart from the photo used as the cover image of this post. That is, up until that moment, because these papers contained a very detailed account documenting two trips in the Tatra mountains. This post contains these two reports with my comments.&lt;/p&gt;
+          
+        <item>
+          <title>Alphabetical sorting is hard</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2019/sorting-is-hard/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/sorting_is_hard.jpg" class="attachment-full size-full" alt="Alphabetical sorting is hard" />
+                  </a>
+                </p>
+            
+            <p>It really was a great idea. As usual, I took a problem that I randomly ran into and wanted to find a solution to. I was not sure if I could implement the solution, but I knew I could describe it. It happened when I was working on a project where I got some data about municipalities in Hungary. I thought it would be handy to sort them alphabetically so that the user of the final product can easily find the place they are interested in. However, due to the unusual letters in the Hungarian alphabet, such as <em>ő</em> or <em>gy</em>, collation is not trivial. But I knew I could find a way to solve this!</p>
 
-</description>
-        <pubDate>Tue, 29 Oct 2019 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2019/autumn-of-1929</link>
-        <guid isPermaLink="true">https://hann.io/articles/2019/autumn-of-1929</guid>
-        
-        
-        <category>hiking</category>
-        
-        <category>maps</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Sun, 24 Nov 2019 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2019/sorting-is-hard/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2019/sorting-is-hard/</guid>
+          
+          
+          <category>language</category>
+          
+        </item>
+      
     
-      <item>
-        <title>1929 ősze – két túra története</title>
-        <description>&lt;p&gt;Dédapám, Frenyó Lajos iratait rendezgettem, amikor az egyik füzetében néhány összehajtott lapot találtam. Tudtam róla, hogy szeretett túrázni, de korábban egy (a bejegyzés borítóképeként is használt) fényképen kívül nem igazán volt más emlék erről a hobbijáról. Egészen eddig, mert ez a pár lap két tátrai túra beszámolóját tartalmazta – nem csak egyszerű túraleírásként, hanem részletes dokumentációként szolgálva. Ebben a bejegyzésben a két beszámoló szöveghű leirata olvasható az én megjegyzéseimmel, kiegészítéseimmel.&lt;/p&gt;
+          
+        <item>
+          <title>The autumn of 1929 – the story of two hikes</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2019/autumn-of-1929/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/frenyo_tatra.jpg" class="attachment-full size-full" alt="The autumn of 1929 – the story of two hikes" />
+                  </a>
+                </p>
+            
+            <p>I was going through the documents of my great-grandfather, Lajos Frenyó when I found a couple of folded papers in one of the notebooks. I had already known that he really liked hiking but I did not have any material proof of this hobby apart from the photo used as the cover image of this post. That is, up until that moment, because these papers contained a very detailed account documenting two trips in the Tatra mountains. This post contains these two reports with my comments.</p>
 
-</description>
-        <pubDate>Tue, 29 Oct 2019 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2019/1929-osze</link>
-        <guid isPermaLink="true">https://hann.io/articles/2019/1929-osze</guid>
-        
-        
-        <category>hiking</category>
-        
-        <category>maps</category>
-        
-      </item>
+            ]]>
+          </description>
+          <pubDate>Tue, 29 Oct 2019 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2019/autumn-of-1929/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2019/autumn-of-1929/</guid>
+          
+          
+          <category>hiking</category>
+          
+          <category>maps</category>
+          
+        </item>
+      
     
-      <item>
-        <title>EXPECT A HAPPY HOBBY</title>
-        <description>&lt;p&gt;Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.&lt;label for=&quot;sn-id-relax&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; id=&quot;sn-id-relax&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt; That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just &lt;em&gt;very&lt;/em&gt; similar. &lt;/span&gt; Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.&lt;/p&gt;
-
-&lt;p&gt;I started thinking about this when I realized that I had never seen a Russian license plate with letters that do not also appear in the Latin alphabet. So I started to wonder about two things: is this observation true in general? If so, what words could we make up that would consist only of such letters?&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 02 Dec 2018 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2018/expect-a-happy-hobby</link>
-        <guid isPermaLink="true">https://hann.io/articles/2018/expect-a-happy-hobby</guid>
-        
-        
-        <category>python</category>
-        
-        <category>language</category>
-        
-      </item>
+      
     
-      <item>
-        <title>Nicely formatted transit schedules</title>
-        <description>&lt;p&gt;I enjoy hiking, which most of the times involves using public transportation to get to the start of my hike and to get back home. Planning these trips used to be a major chore in Hungary before 2016, as there was no unified schedule database: one could only plan trips by train &lt;em&gt;or&lt;/em&gt; bus, not together.  During these times I came up with a timetable format in which I manually collected transit options using the bus and train planner websites as well as a map to came up with potential routes. These days transit information is available via the &lt;a href=&quot;https://developers.google.com/maps/documentation/directions/start&quot;&gt;Google Directions API&lt;/a&gt;, so I decided to revisit this format and I developed &lt;a href=&quot;https://github.com/andrashann/generate-nice-timetables&quot;&gt;a script&lt;/a&gt; that creates it automatically.&lt;/p&gt;
+          
+        <item>
+          <title>EXPECT A HAPPY HOBBY</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2018/expect-a-happy-hobby/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/russian_license_plate.jpg" class="attachment-full size-full" alt="EXPECT A HAPPY HOBBY" />
+                  </a>
+                </p>
+            
+            <p>Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.<span class="sidenote"> That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just <em>very</em> similar. </span> Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.</p>
 
-</description>
-        <pubDate>Sat, 18 Aug 2018 00:00:00 +0200</pubDate>
-        <link>https://hann.io/articles/2018/nicely-formatted-transit-schedules</link>
-        <guid isPermaLink="true">https://hann.io/articles/2018/nicely-formatted-transit-schedules</guid>
-        
-        
-        <category>python</category>
-        
-        <category>transportation</category>
-        
-      </item>
+<p>I started thinking about this when I realized that I had never seen a Russian license plate with letters that do not also appear in the Latin alphabet. So I started to wonder about two things: is this observation true in general? If so, what words could we make up that would consist only of such letters?</p>
+
+            ]]>
+          </description>
+          <pubDate>Sun, 02 Dec 2018 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2018/expect-a-happy-hobby/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2018/expect-a-happy-hobby/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>language</category>
+          
+        </item>
+      
     
-      <item>
-        <title>Sunrise, sunset</title>
-        <description>&lt;p&gt;I grew up in Budapest and moved to the Netherlands a few years ago. I could not ignore the fact that the Sun has very different patterns: it rises later and sets later here than in Budapest. However, this difference is not uniform: my feeling was that the sun rises much later and sets about the same time during the winter. I saw the inverse in the summer: Dutch summer evenings are much longer, but dawn does not lag behind that much. I wanted to verify this feeling in a scalable manner, so I created a &lt;a href=&quot;http://hann.io/sunrise-sunset/&quot;&gt;website&lt;/a&gt; (code &lt;a href=&quot;https://github.com/andrashann/sunrise-sunset&quot;&gt;here&lt;/a&gt;) where you can pick two arbitrary locations on the globe and see a graph with their dawn/dusk times through the year.&lt;/p&gt;
+          
+        <item>
+          <title>Nicely formatted transit schedules</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2018/nicely-formatted-transit-schedules/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/nice_timetables.jpg" class="attachment-full size-full" alt="Nicely formatted transit schedules" />
+                  </a>
+                </p>
+            
+            <p>I enjoy hiking, which most of the times involves using public transportation to get to the start of my hike and to get back home. Planning these trips used to be a major chore in Hungary before 2016, as there was no unified schedule database: one could only plan trips by train <em>or</em> bus, not together.  During these times I came up with a timetable format in which I manually collected transit options using the bus and train planner websites as well as a map to came up with potential routes. These days transit information is available via the <a href="https://developers.google.com/maps/documentation/directions/start">Google Directions API</a>, so I decided to revisit this format and I developed <a href="https://github.com/andrashann/generate-nice-timetables">a script</a> that creates it automatically.</p>
 
-</description>
-        <pubDate>Thu, 08 Mar 2018 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2018/sunrise-sunset</link>
-        <guid isPermaLink="true">https://hann.io/articles/2018/sunrise-sunset</guid>
-        
-        
-        <category>maps</category>
-        
-        <category>javascript</category>
-        
-        <category>osm</category>
-        
-      </item>
+            ]]>
+          </description>
+          <pubDate>Sat, 18 Aug 2018 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2018/nicely-formatted-transit-schedules/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2018/nicely-formatted-transit-schedules/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>transportation</category>
+          
+        </item>
+      
     
-      <item>
-        <title>Where have the camels gone?</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://www.teveclub.hu&quot;&gt;teveclub.hu&lt;/a&gt; used to be one of the most well-known websites among Hungarian teenagers. It is a Neopets clone where you can raise your own camel: feed it, and teach it various tricks day by day. I had the feeling that the site was slowly dying. I used data from &lt;a href=&quot;https://archive.org/web/&quot;&gt;archive.org&lt;/a&gt; to verify this hypothesis and I found that it was true: the total number of camels in the system has dropped from the ~320 thousand peak in 2006 to less than 26 thousand in 2018.&lt;/p&gt;
+          
+        <item>
+          <title>Sunrise, sunset</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2018/sunrise-sunset/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/sunrise_sunset_ams.jpg" class="attachment-full size-full" alt="Sunrise, sunset" />
+                  </a>
+                </p>
+            
+            <p>I grew up in Budapest and moved to the Netherlands a few years ago. I could not ignore the fact that the Sun has very different patterns: it rises later and sets later here than in Budapest. However, this difference is not uniform: my feeling was that the sun rises much later and sets about the same time during the winter. I saw the inverse in the summer: Dutch summer evenings are much longer, but dawn does not lag behind that much. I wanted to verify this feeling in a scalable manner, so I created a <a href="http://hann.io/sunrise-sunset/">website</a> (code <a href="https://github.com/andrashann/sunrise-sunset">here</a>) where you can pick two arbitrary locations on the globe and see a graph with their dawn/dusk times through the year.</p>
 
-</description>
-        <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>https://hann.io/articles/2016/where-have-the-camels-gone</link>
-        <guid isPermaLink="true">https://hann.io/articles/2016/where-have-the-camels-gone</guid>
-        
-        
-        <category>hungary</category>
-        
-        <category>graph</category>
-        
-        <category>python</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Thu, 08 Mar 2018 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2018/sunrise-sunset/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2018/sunrise-sunset/</guid>
+          
+          
+          <category>maps</category>
+          
+          <category>javascript</category>
+          
+          <category>osm</category>
+          
+        </item>
+      
     
-      <item>
-        <title>Grab a drink while you wait for the bus</title>
-        <description>&lt;p&gt;I always found it fascinating that there are several bus stops in Hungary which are called “{municipality name}, Cooperative Liquor Store” (&lt;em&gt;szövetkezeti italbolt&lt;/em&gt; in Hungarian). It might get somewhat lost in translation that such a name very much reminds the reader of the socialist era it was given to the bus stop.&lt;/p&gt;
+          
+        <item>
+          <title>Where have the camels gone?</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2016/where-have-the-camels-gone/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/teveclub_screenshot.png" class="attachment-full size-full" alt="Where have the camels gone?" />
+                  </a>
+                </p>
+            
+            <p><a href="http://www.teveclub.hu">teveclub.hu</a> used to be one of the most well-known websites among Hungarian teenagers. It is a Neopets clone where you can raise your own camel: feed it, and teach it various tricks day by day. I had the feeling that the site was slowly dying. I used data from <a href="https://archive.org/web/">archive.org</a> to verify this hypothesis and I found that it was true: the total number of camels in the system has dropped from the ~320 thousand peak in 2006 to less than 26 thousand in 2018.</p>
 
-</description>
-        <pubDate>Thu, 20 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus</link>
-        <guid isPermaLink="true">https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus</guid>
-        
-        
-        <category>hungary</category>
-        
-        <category>maps</category>
-        
-        <category>openstreetmap</category>
-        
-        <category>transportation</category>
-        
-      </item>
+
+            ]]>
+          </description>
+          <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2016/where-have-the-camels-gone/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2016/where-have-the-camels-gone/</guid>
+          
+          
+          <category>hungary</category>
+          
+          <category>graph</category>
+          
+          <category>python</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>Grab a drink while you wait for the bus</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/italbolt.jpg" class="attachment-full size-full" alt="Grab a drink while you wait for the bus" />
+                  </a>
+                </p>
+            
+            <p>I always found it fascinating that there are several bus stops in Hungary which are called “{municipality name}, Cooperative Liquor Store” (<em>szövetkezeti italbolt</em> in Hungarian). It might get somewhat lost in translation that such a name very much reminds the reader of the socialist era it was given to the bus stop.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Thu, 20 Aug 2015 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus/</guid>
+          
+          
+          <category>hungary</category>
+          
+          <category>maps</category>
+          
+          <category>openstreetmap</category>
+          
+          <category>transportation</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>Hungarian municiaplity name prefixes</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2015/hungarian-munipality-name-prefixes/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/hungarian_municipality_names.jpg" class="attachment-full size-full" alt="Hungarian municiaplity name prefixes" />
+                  </a>
+                </p>
+            
+            <p>Hungarian municipalities have unique names that consist of one (potentially compound) word. This was not the case until the end of the 19th century: multiple villages could have the same name, sometimes even in the same county. This caused trouble not only for the postal service but also related to taxation and conscription. Hence the standardization: every name must be unique; in case of a duplcate, the municipality names got a prefix based on their general location. I investigated these prefixes: their spatial distribution and the origin of those names.</p>
+
+            ]]>
+          </description>
+          <pubDate>Thu, 06 Aug 2015 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2015/hungarian-munipality-name-prefixes/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2015/hungarian-munipality-name-prefixes/</guid>
+          
+          
+          <category>maps</category>
+          
+          <category>hungary</category>
+          
+          <category>openstreetmap</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>Bad idea of the day: toll on M0, the ring road around Budapest</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2014/bad-idea-tolled-m0/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/m0_fizetos.jpg" class="attachment-full size-full" alt="Bad idea of the day: toll on M0, the ring road around Budapest" />
+                  </a>
+                </p>
+            
+            <p>An <a href="https://web.archive.org/web/20180513180658/http://nol.hu/gazdasag/fizetos-lesz-az-m0-s-1503659">article</a> published yesterday in <em>Népszabadság</em> reveals that the Hungarian budget for 2015 includes a proposal to introduce tolls on several motorway segments that are toll-free today. To me, this sounds like a bad idea.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Thu, 11 Dec 2014 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2014/bad-idea-tolled-m0/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2014/bad-idea-tolled-m0/</guid>
+          
+          
+          <category>transportation</category>
+          
+          <category>hungary</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>How far up does the tram go?</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2013/how-far-up-does-the-tram-go/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/trams_fortepan_67539.jpg" class="attachment-full size-full" alt="How far up does the tram go?" />
+                  </a>
+                </p>
+            
+            <p>Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61.<span class="sidenote"> Service on line 58 has been suspended since 1977. In this case, “suspension” includes the tracks having been removed and paved over. Based on this, I do not think service will restart anytime soon. </span> But how far up do these actually go? And which one is the steepest?</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Mon, 25 Nov 2013 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2013/how-far-up-does-the-tram-go/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2013/how-far-up-does-the-tram-go/</guid>
+          
+          
+          <category>maps</category>
+          
+          <category>hungary</category>
+          
+          <category>transportation</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>Revolutionary street names</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2013/revolutionary-street-names/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/revolutionary_street_names.jpg" class="attachment-full size-full" alt="Revolutionary street names" />
+                  </a>
+                </p>
+            
+            <p>Every Hungarian knows that almost every village in the country will have a street named after Lajos Kossuth, revolutionary and politician, and another named after Sándor Petőfi, an emblematic hero-poet – both of whom took part in the <a href="https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1848">Hungarian Revolution of 1848</a>. But where exactly are these streets?</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Fri, 15 Mar 2013 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2013/revolutionary-street-names/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2013/revolutionary-street-names/</guid>
+          
+          
+          <category>maps</category>
+          
+          <category>hungary</category>
+          
+          <category>openstreetmap</category>
+          
+        </item>
+      
     
   </channel>
 </rss>

@@ -21,13 +21,11 @@
   <link rel="stylesheet" type="text/css" href="/css/tufte.css">
   <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
   
-  <link rel="canonical" href="https://hann.io/articles/2020/understanding-overpass">
+  <link rel="canonical" href="https://hann.io/articles/2020/understanding-overpass/">
 
   <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
 
   
-
-
 
   <!-- favico and friends -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
@@ -45,7 +43,7 @@
   <!-- og -->
   <meta property="og:title" content="Understanding Overpass, the API of OpenStreetMap" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hann.io/articles/2020/understanding-overpass" />
+  <meta property="og:url" content="https://hann.io/articles/2020/understanding-overpass/" />
   <meta property="og:image" content="https://hann.io/assets/og/understanding_overpass.jpg" />
   <meta property="article:published_time" content="2020-01-17T00:00:00+01:00" />
   <!-- og end -->
@@ -92,7 +90,7 @@
 
 <p>Overpass Turbo generates a query for us. After removing the comments that are added automatically (and that are not very useful unless you already know well how Overpass works), we get the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
 <span class="p">{{</span><span class="n">geocodeArea</span><span class="o">:</span><span class="n">Szeged</span><span class="p">}}</span><span class="o">-&gt;</span><span class="p">.</span><span class="n">searchArea</span><span class="p">;</span>
 <span class="p">(</span>
   <span class="n">node</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
@@ -102,8 +100,7 @@
 <span class="n">out</span> <span class="n">body</span><span class="p">;</span>
 <span class="o">&gt;</span><span class="p">;</span>
 <span class="n">out</span> <span class="n">skel</span> <span class="n">qt</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="line-by-line-analysis">Line-by-line analysis</h2>
 
@@ -117,17 +114,17 @@
 
 <p>As for the timeout: sometimes you might notice that this happens to your query. In this case, you might want to increase the timeout setting. Be mindful though that the API servers provide a free service you share with others. Do not query too much data at the same time and do not let your queries run for too long – your query might get denied if you request too much/too often.</p>
 
-<h3 id="the-geocodeareaszeged-searcharea-statement">The <code class="highlighter-rouge"><span class="p">{</span><span class="err">{geocodeArea:Szeged</span><span class="p">}</span><span class="err">}-&gt;.searchArea;</span></code> statement</h3>
+<h3 id="the-geocodeareaszeged-searcharea-statement">The <code class="highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> statement</h3>
 
-<p><code class="highlighter-rouge"><span class="p">{</span><span class="err">{geocodeArea:Szeged</span><span class="p">}</span><span class="err">}-&gt;.searchArea;</span></code> assigns the area called Szeged to a variable called searchArea.</p>
+<p><code class="highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> assigns the area called Szeged to a variable called searchArea.</p>
 
 <p><figure><img src="/assets/img/overpass/szeged_aerial.jpg" /><figcaption><span>Aerial photo of Szeged, taken in 1989. The <a href="https://en.wikipedia.org/wiki/Votive_Church,_Szeged">Votive Church</a> is in the middle of the photo with the <a href="https://en.wikipedia.org/wiki/Tisza">Tisza</a> river behind it. The white building in the park on the left of the river is the <a href="https://en.wikipedia.org/wiki/M%C3%B3ra_Ferenc_M%C3%BAzeum">Móra Ferenc Museum</a>. <em><a href="http://fortepan.hu/?image_id=40715">FORTEPAN/Urbán Tamás.</a> Creative Commons CC-BY-SA-3.0</em></span></figcaption></figure></p>
 
-<p><code class="highlighter-rouge"><span class="p">{</span><span class="err">{geocodeArea:Szeged</span><span class="p">}</span><span class="err">}</span></code> is actually not pure Overpass QL but an Overpass Turbo Shortcut. These shortcuts are provided by Overpass Turbo to make writing queries easier. In this case, the shortcut is used to find the area called Szeged, so that we do not have to manually find its ID to run the query.<label for="sn-id-shortcuts" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-shortcuts" class="margin-toggle" /><span class="sidenote"> You can read more about Overpass Turbo shortcuts on the <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries">Wiki</a>. </span></p>
+<p><code class="highlighter-rouge">{{geocodeArea:Szeged}}</code> is actually not pure Overpass QL but an Overpass Turbo Shortcut. These shortcuts are provided by Overpass Turbo to make writing queries easier. In this case, the shortcut is used to find the area called Szeged, so that we do not have to manually find its ID to run the query.<label for="sn-id-shortcuts" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-shortcuts" class="margin-toggle" /><span class="sidenote"> You can read more about Overpass Turbo shortcuts on the <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries">Wiki</a>. </span></p>
 
 <p>If you click <strong><code class="highlighter-rouge">Export</code></strong> then under <strong><code class="highlighter-rouge">Query</code></strong> select <strong><code class="highlighter-rouge">Convert to OverpassQL</code></strong>, you get the actual query with the shortcuts expanded into their actual values. In our case, we can see that the line gets replaced with <code class="highlighter-rouge">area(3601025105)-&gt;.searchArea;</code>,<label for="mn-id-changes" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-changes" class="margin-toggle" /><span class="marginnote">IDs like this or any of the specific results (node details, tags, dates, anything) can change as editors add data to the map. Therefore, these specifics might get outdated in this article at one point, but this should not hinder the understanding of its material. </span> so we now know that the area ID of Szeged is 3601025105.</p>
 
-<h3 id="and-"><code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code></h3>
+<h3 id="-and-"><code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code></h3>
 
 <p><code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code> indicate that we would like to get a union of the searches that we see on the next three lines.</p>
 
@@ -149,54 +146,50 @@
 
 <p>If we do not add <code class="highlighter-rouge">out;</code>, we will not get actual results. Try running the following code in Overpass Turbo by pasting it there and pressing the <strong><code class="highlighter-rouge">Run</code></strong> button:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
 <span class="p">{{</span><span class="n">geocodeArea</span><span class="o">:</span><span class="n">Szeged</span><span class="p">}}</span><span class="o">-&gt;</span><span class="p">.</span><span class="n">searchArea</span><span class="p">;</span>
 <span class="p">(</span>
   <span class="n">node</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">way</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">relation</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
 <span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Overpass Turbo will not display a map because it receives no geo data. It will display a response similar to the following one in the <strong><code class="highlighter-rouge">Data</code></strong> tab:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"generator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Overpass API 0.7.55.5 2ca3f387"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"osm3s"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"timestamp_osm_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-16T15:03:02Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"timestamp_areas_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-16T14:53:02Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"generator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Overpass API 0.7.55.5 2ca3f387"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"osm3s"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"timestamp_osm_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-16T15:03:02Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp_areas_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-03-16T14:53:02Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>This happens because we did not specify the aspects of the data points we actually want to get.</p>
 
 <p>To make this a bit clearer, we have to understand that Overpass QL allows for some abstraction. When we ran the following part of the query:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">(</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span>
   <span class="n">node</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">way</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">relation</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
 <span class="p">);</span>
 <span class="n">out</span> <span class="n">body</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Overpass interpreted this as assigning this union to an unnamed default result set, then asked the server to output this unnamed default result set. If we were to write an explicit query, we could write:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">(</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span>
   <span class="n">node</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">way</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
   <span class="n">relation</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
 <span class="p">)</span><span class="o">-&gt;</span><span class="p">.</span><span class="n">my_museums</span><span class="p">;</span>
 <span class="p">.</span><span class="n">my_museums</span> <span class="n">out</span> <span class="n">body</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Just like when we defined the search area, the <code class="highlighter-rouge">-&gt;</code> operator is used to assign a result set to a variable (whose name must start with a period). In programming terms, if we do not return this variable, it just gets destroyed after our query runs. <code class="highlighter-rouge">out</code> is used in this case to actually “collect” its results. It does not return a new set but updates the original one.</p>
 
@@ -220,24 +213,23 @@
 
 <p>For example, one of the museums in Szeged is called <em>Fekete Ház</em>. Its data in OpenStreetMap is the following (with some node IDs omitted for brevity):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"way"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92877718</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"way"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92877718</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">1076957101</span><span class="p">,</span><span class="w">
     </span><span class="mi">4794113061</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="p">,</span><span class="w">
     </span><span class="mi">1076957101</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"building"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fekete Ház"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tourism"</span><span class="p">:</span><span class="w"> </span><span class="s2">"museum"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://moramuzeum.hu/latogatoi-informaciok/kiallitohelyeink/fekete-haz/"</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"building"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fekete Ház"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tourism"</span><span class="p">:</span><span class="w"> </span><span class="s2">"museum"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://moramuzeum.hu/latogatoi-informaciok/kiallitohelyeink/fekete-haz/"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>We know that we need nodes <code class="highlighter-rouge">1076957101</code>, <code class="highlighter-rouge">4794113061</code>, <code class="highlighter-rouge">1076957033</code> to display the outline of the building, but we do not get their details (their coordinates and other tags) from the server unless we specifically ask for them with the recursion statement.</p>
 
@@ -255,31 +247,29 @@
 
 <p>If we use <code class="highlighter-rouge">body</code>, we receive the following information about this node:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4556840669</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.2442204</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.1416321</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"historic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memorial"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"material"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stone"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"memorial"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plaque"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Varga Mátyás"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4556840669</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.2442204</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.1416321</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"historic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memorial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"material"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stone"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memorial"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plaque"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Varga Mátyás"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>whereas with <code class="highlighter-rouge">skel</code> we really only get whatever is needed to display it (as a part of a line):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4556840669</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.2442204</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.1416321</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4556840669</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.2442204</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.1416321</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 <p>Part of our query has already been returned with <code class="highlighter-rouge">out body</code> before we called <code class="highlighter-rouge">out skel</code> on the second part (where we got additional data points with <code class="highlighter-rouge">&gt;</code>). Therefore, although we only get basic data of the new elements, we do not lose the already retrieved tag information of the previously returned elements.</p>
 
 <h2 id="getting-centroids">Getting centroids</h2>
@@ -290,17 +280,15 @@
 
 <p>Therefore, we can change the end of our query by replacing</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">out</span> <span class="n">body</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">out</span> <span class="n">body</span><span class="p">;</span>
 <span class="o">&gt;</span><span class="p">;</span>
 <span class="n">out</span> <span class="n">skel</span> <span class="n">qt</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>with</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">out</span> <span class="n">body</span> <span class="n">center</span><span class="p">;</span> <span class="c1">// 'body' can be omitted because it is the default value
-</span></code></pre>
-</div>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">out</span> <span class="n">body</span> <span class="n">center</span><span class="p">;</span> <span class="c1">// 'body' can be omitted because it is the default value</span>
+</code></pre></div></div>
 
 <p>and we get the centroids as expected. Notice that we only have one <code class="highlighter-rouge">out</code> statement here; this is because it immediately returns the centroid without the need to use <code class="highlighter-rouge">&gt;</code> to get the constituent elements of ways and relations.</p>
 
@@ -308,7 +296,7 @@
 
 <p>If I were to write the query by hand, I would probably put it in the following format:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
 <span class="p">{{</span><span class="n">geocodeArea</span><span class="o">:</span><span class="n">Szeged</span><span class="p">}}</span><span class="o">-&gt;</span><span class="p">.</span><span class="n">searchArea</span><span class="p">;</span>
 <span class="p">(</span>
   <span class="n">node</span><span class="p">[</span><span class="s">"tourism"</span><span class="o">=</span><span class="s">"museum"</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="n">searchArea</span><span class="p">);</span>
@@ -318,8 +306,7 @@
 <span class="p">.</span><span class="n">my_museums</span> <span class="n">out</span><span class="p">;</span>
 <span class="p">.</span><span class="n">my_museums</span> <span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="p">.</span><span class="n">full_set</span><span class="p">;</span>
 <span class="p">.</span><span class="n">full_set</span> <span class="n">out</span> <span class="n">skel</span> <span class="n">qt</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Just adding the few variable names makes it much easier to read – it becomes much clearer what data we act on on each step.</p>
 
@@ -343,7 +330,7 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = "https://hann.io/articles/2020/understanding-overpass"
+this.page.url = "https://hann.io/articles/2020/understanding-overpass/"
 this.page.identifier = "/articles/2020/understanding-overpass"
 };
 
