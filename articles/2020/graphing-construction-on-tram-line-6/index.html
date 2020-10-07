@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Graphing Construction on Tram Line 6 in Budapest | hann.io</title>
+  <meta name="description" content="In this article I explore a method to visualize linear spatial data that changes over time: which segments of tram line 6 of Budapest were under construction...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://medium.com/nightingale/graphing-construction-on-tram-line-6-in-budapest-24e3f660295d">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Graphing Construction on Tram Line 6 in Budapest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2020/graphing-construction-on-tram-line-6/" />
+  <meta property="og:image" content="https://hann.io/assets/og/tram6_reno.jpg" />
+  <meta property="article:published_time" content="2020-06-30T00:00:00+02:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>Graphing Construction on Tram Line 6 in Budapest</h1>
+<p class="subtitle">June 30, 2020
+
+</p>
+
+<p>In this article I explore a method to visualize linear spatial data that changes over time: which segments of tram line 6 of Budapest were under construction at which points in time? This investigation is inspired by a <a href="https://index.hu/video/2020/06/15/4_6_villamos_felujitas_nagykorut_negyes_hatos_husz_ev_alatt/">video</a> posted on Index.hu and a 140-year-old <a href="http://marlenacompton.com/?p=103">train schedule diagram</a>.</p>
+
+<!--more-->
+
+<p><em>This article was <a href="https://medium.com/nightingale/graphing-construction-on-tram-line-6-in-budapest-24e3f660295d">originally posted on Nightingale</a>, the Journal of the Data Visualization Society.</em></p>
+
+<p><figure><img src="/assets/img/tram6reno/fortepan_82462.jpg" /><figcaption><span>Trams in front of Nyugati Railway Station, Budapest, 1890s. Photo: <a href="http://fortepan.hu/?language=en-US&amp;image_id=82462">Fortepan / Budapest Főváros Levéltára / Klösz György</a></span></figcaption></figure></p>
+
+<p>The first electric trams in Budapest <a href="https://dailynewshungary.com/the-130-years-of-trams-in-budapest">started service in 1887</a> on the Grand Boulevard. This segment later became part of Line 6 and its sister Line 4, which follows the same route except for the last two stops. Combined, they are the <a href="https://budapesttimes-archiv.bzt.hu/2015/04/03/europes-busiest-trams-with-sights-galore/">busiest tram lines of Europe</a>. For 10 years, they were served by the <a href="https://en.wikipedia.org/wiki/Avenio">longest passenger trams of the world</a> — only to be surpassed by another line in Budapest.</p>
+
+<h2 id="replacement-buses">Replacement buses</h2>
+
+<p>Someone taking these trams in Budapest does not ponder these historic facts when traveling on the line. No, she thinks about something else: the feeling that there is <em>yet another</em> construction project going on on some segment of the line, so she needs to take the tram replacement bus. <em>Again</em>.</p>
+
+<p>As school holidays start, work is starting again on the line as well. This inspired some journalists at <a href="http://index.hu/">index.hu</a>, the <a href="https://www.similarweb.com/top-websites/hungary">largest news site</a> in Hungary to create a <a href="https://index.hu/video/2020/06/15/4_6_villamos_felujitas_nagykorut_negyes_hatos_husz_ev_alatt/">video</a> showing a map of the line over time, highlighting each segment during the months they were renovated. Although the text in the video is in Hungarian, the main message comes across regardless of language: during a given month, segments that are undergoing works are shown in red.</p>
+
+<p>Readers can also vote about how they feel regarding the topic: 61 percent said that they think that there are too many construction works and there should be a way to build a tram line without needing to repair it all the time.</p>
+
+<h2 id="two-minutes-and-thirty-five-seconds-and-a-time-space-graph">Two minutes and thirty-five seconds and a time-space graph</h2>
+
+<p>The video linked above is 2:35 long. I did not watch it to the end at first as it gets rather bland after a while. This was true even though the creators sped through months without construction works. This speed change, in my opinion, actually skews the message — much more of the video is spent showing construction works than the relative time they actually took during the past 20 years.</p>
+
+<p>Although the video did not keep me engaged, the underlying data did. I remembered the famous <a href="http://marlenacompton.com/?p=103">train schedule diagram created by E.J. Marey</a> in the 1880s. This is a really clever way to pack a lot of information into one chart (although it might take a moment to fully understand it). The horizontal axis shows <em>time</em>, the vertical axis shows <em>space</em>. As time passes (we move to the right on the horizontal axis), trains move up or down (on the vertical axis), showing the progress of their journey between Paris and Lyon.</p>
+
+<p><figure><img src="/assets/img/tram6reno/marey.jpg" /><figcaption><span>E.J. Marey’s 1880s train schedule diagram. <a href="http://marlenacompton.com/?p=103">Source</a>.</span></figcaption></figure></p>
+
+<h2 id="marey-meet-tram-line-6">Marey, meet tram line 6</h2>
+
+<p>After this figure popped into my mind, it was not hard to come up with a way to use this approach to visualize tram renovations. I keep time on the horizontal axis, but instead of one day, I plot 20 years; the vertical axis remains a proportionally spaced diagram of the stops along the line.</p>
+
+<p>Therefore, I watched the video again and took note of each construction event, measured the distances between stops on <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, and finally wrote a couple of lines in Python (<a href="https://gist.github.com/andrashann/c1950ff664c37a5345f50fed05c208bd">available as a GitHub Gist</a>) to visualize it using the Matplotlib package.</p>
+
+<p><figure class="fullwidth"><img src="/assets/img/tram6reno/tram6.png" /><figcaption><span>A concise way to show time and space: years are displayed on the horizontal axis while the vertical axis shows the tram line and its stops. <a href="https://gist.github.com/andrashann/c1950ff664c37a5345f50fed05c208bd">Source code</a>.</span></figcaption></figure></p>
+
+<p>Some construction works in the video were annotated in more detail than others. I highlighted three of them as they were the most notable ones:</p>
+
+<ul>
+  <li>In 2006, the whole line was rebuilt to accommodate for the (then) world record length and relative wideness of the new Siemens Combino trams.</li>
+  <li>Between 2009 and 2011 Margaret Bridge, a bridge on the Danube was closed down due to <a href="https://en.wikipedia.org/wiki/Margaret_Bridge#2009%E2%80%932011">a full reconstruction</a>.</li>
+  <li>The line was connected to the <a href="https://www.emta.com/spip.php?article1026&amp;lang=en">Buda Interconnected Tram Network</a> in 2015, which meant that instead of a completely separate service, the segment between stops <em>Széll Kálmán Tér M </em>and <em>Margit híd, budai hídfő H</em> are now shared with tram line 17.</li>
+</ul>
+
+<p><figure><img src="/assets/img/tram6reno/fortepan_7784_small.jpg" /><figcaption><span>Trams at Moszkva tér, 1975. Line 4/6 terminates behind the building with the fan-shaped roof. Photo: <a href="http://fortepan.hu/?language=en-US&amp;image_id=7784">Fortepan</a>.</span></figcaption></figure></p>
+
+<h2 id="one-diagram-many-insights">One diagram, many insights</h2>
+
+<p>Looking at this diagram takes significantly less time than two minutes and thirty-five seconds. You can still see which segments were renovated when — but not just for one month at a time but the whole twenty years.</p>
+
+<p>Additionally, it provides insights that are not so easy to derive from the video.</p>
+
+<p>For example, by looking at the full width of the diagram, you can see that the segment between <em>Margit híd, budai hídfő H</em> and <em>Széna tér</em> underwent works five times in the past twenty years, whereas the ones between <em>Corvin negyed M </em>and <em>Harminckettesek tere </em>and<em> Móricz Zsigmond körtér M </em>and <em>Budafoki út</em> was only touched once.</p>
+
+<p>It is also relatively easy to gauge the length of each project: you can see that the renovation of Margaret Bridge took almost two years, whereas a typical project is around 2–3 months.</p>
+
+<p>Or, if you pay attention to the year dividers, you can see that works are more likely to be scheduled during school holidays (from mid-June until the end of August) than other times of the year — with the exception of the multi-year bridge reconstruction project, no works were carried out during the winter months.</p>
+
+<p>Finally, you might also notice that the frequency of renovations is not terrible after all — although there are cases where the same segment underwent works twice within two years, much more time passes before a repeated renovation in the typical scenario. Also, let’s not forget that this is the busiest tram line in Europe, so some wear and tear are certainly expected.</p>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>While I enjoy watching videos, they might not always be the best way to convey information. Adding the third dimension of time to the x;y coordinates of pictures might be useful when we want to <a href="https://youtu.be/hVimVzgtD6w?t=206">show how something evolves over time</a>. However, if we care about snapshots, not the evolution of something, a static image might be easier to digest — and might give more insight.</p>
+
+<p>I really enjoyed producing this diagram, especially since I got real, useful results in a short period of time. Feel free to let me know what you think about it!</p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2020/graphing-construction-on-tram-line-6/"
+this.page.identifier = "/articles/2020/graphing-construction-on-tram-line-6"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Graphing Construction on Tram Line 6 in Budapest - June 30, 2020 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

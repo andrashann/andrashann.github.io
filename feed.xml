@@ -10,9 +10,40 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Jul 2020 22:50:58 +0200</pubDate>
-    <lastBuildDate>Mon, 13 Jul 2020 22:50:58 +0200</lastBuildDate>
+    <pubDate>Wed, 07 Oct 2020 22:02:45 +0200</pubDate>
+    <lastBuildDate>Wed, 07 Oct 2020 22:02:45 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+          
+        <item>
+          <title>Graphing Construction on Tram Line 6 in Budapest</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/graphing-construction-on-tram-line-6/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/tram6_reno.jpg" class="attachment-full size-full" alt="Graphing Construction on Tram Line 6 in Budapest" />
+                  </a>
+                </p>
+            
+            <p>In this article I explore a method to visualize linear spatial data that changes over time: which segments of tram line 6 of Budapest were under construction at which points in time? This investigation is inspired by a <a href="https://index.hu/video/2020/06/15/4_6_villamos_felujitas_nagykorut_negyes_hatos_husz_ev_alatt/">video</a> posted on Index.hu and a 140-year-old <a href="http://marlenacompton.com/?p=103">train schedule diagram</a>.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Tue, 30 Jun 2020 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2020/graphing-construction-on-tram-line-6/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/graphing-construction-on-tram-line-6/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>visualization</category>
+          
+          <category>data</category>
+          
+        </item>
+      
     
           
         <item>
@@ -403,37 +434,6 @@
           <category>hungary</category>
           
           <category>transportation</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>Revolutionary street names</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2013/revolutionary-street-names/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/revolutionary_street_names.jpg" class="attachment-full size-full" alt="Revolutionary street names" />
-                  </a>
-                </p>
-            
-            <p>Every Hungarian knows that almost every village in the country will have a street named after Lajos Kossuth, revolutionary and politician, and another named after Sándor Petőfi, an emblematic hero-poet – both of whom took part in the <a href="https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1848">Hungarian Revolution of 1848</a>. But where exactly are these streets?</p>
-
-
-            ]]>
-          </description>
-          <pubDate>Fri, 15 Mar 2013 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2013/revolutionary-street-names/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2013/revolutionary-street-names/</guid>
-          
-          
-          <category>maps</category>
-          
-          <category>hungary</category>
-          
-          <category>openstreetmap</category>
           
         </item>
       
