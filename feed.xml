@@ -10,8 +10,8 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Oct 2020 22:02:45 +0200</pubDate>
-    <lastBuildDate>Wed, 07 Oct 2020 22:02:45 +0200</lastBuildDate>
+    <pubDate>Thu, 08 Oct 2020 23:56:39 +0200</pubDate>
+    <lastBuildDate>Thu, 08 Oct 2020 23:56:39 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
           
@@ -41,6 +41,37 @@
           <category>visualization</category>
           
           <category>data</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>Get Public Transport Timetables</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/get-public-transport-timetables/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/gptt.jpg" class="attachment-full size-full" alt="Get Public Transport Timetables" />
+                  </a>
+                </p>
+            
+            <p>About two years ago, I shared an <a href="/articles/2018/nicely-formatted-transit-schedules/">article</a> about a project where I query and process results from the Google Transit API in a way that provides a simple overview for public transport connections between two places. Since I ended up using it rather frequently, I decided to turn it into a proper Python package, called <em>gptt</em>, available on <a href="https://github.com/andrashann/gptt">GitHub</a> and <a href="https://pypi.org/project/gptt/">PyPI</a>.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Mon, 25 May 2020 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2020/get-public-transport-timetables/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/get-public-transport-timetables/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>transportation</category>
+          
+          <category>pypi</category>
           
         </item>
       
@@ -403,37 +434,6 @@
           <category>transportation</category>
           
           <category>hungary</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>How far up does the tram go?</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2013/how-far-up-does-the-tram-go/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/trams_fortepan_67539.jpg" class="attachment-full size-full" alt="How far up does the tram go?" />
-                  </a>
-                </p>
-            
-            <p>Historically, there were three relatively hilly tram lines in Budapest: 58, 59, and 61.<span class="sidenote"> Service on line 58 has been suspended since 1977. In this case, “suspension” includes the tracks having been removed and paved over. Based on this, I do not think service will restart anytime soon. </span> But how far up do these actually go? And which one is the steepest?</p>
-
-
-            ]]>
-          </description>
-          <pubDate>Mon, 25 Nov 2013 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2013/how-far-up-does-the-tram-go/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2013/how-far-up-does-the-tram-go/</guid>
-          
-          
-          <category>maps</category>
-          
-          <category>hungary</category>
-          
-          <category>transportation</category>
           
         </item>
       
