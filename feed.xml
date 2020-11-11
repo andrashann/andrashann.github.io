@@ -10,9 +10,42 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Oct 2020 23:56:39 +0200</pubDate>
-    <lastBuildDate>Thu, 08 Oct 2020 23:56:39 +0200</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2020 23:11:53 +0100</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2020 23:11:53 +0100</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+          
+        <item>
+          <title>Is there enough space in Manhattan to stay six feet apart?</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2020/manhattan-distance/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/manhattan_distance.jpg" class="attachment-full size-full" alt="Is there enough space in Manhattan to stay six feet apart?" />
+                  </a>
+                </p>
+            
+            <p>According to my analysis, it is likely that there is, but this seems not to be the case in other, more densely populated localities.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Sat, 17 Oct 2020 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2020/manhattan-distance/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2020/manhattan-distance/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>visualization</category>
+          
+          <category>data</category>
+          
+          <category>gis</category>
+          
+        </item>
+      
     
           
         <item>
@@ -405,35 +438,6 @@
           <category>hungary</category>
           
           <category>openstreetmap</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>Bad idea of the day: toll on M0, the ring road around Budapest</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2014/bad-idea-tolled-m0/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/m0_fizetos.jpg" class="attachment-full size-full" alt="Bad idea of the day: toll on M0, the ring road around Budapest" />
-                  </a>
-                </p>
-            
-            <p>An <a href="https://web.archive.org/web/20180513180658/http://nol.hu/gazdasag/fizetos-lesz-az-m0-s-1503659">article</a> published yesterday in <em>Népszabadság</em> reveals that the Hungarian budget for 2015 includes a proposal to introduce tolls on several motorway segments that are toll-free today. To me, this sounds like a bad idea.</p>
-
-
-            ]]>
-          </description>
-          <pubDate>Thu, 11 Dec 2014 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2014/bad-idea-tolled-m0/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2014/bad-idea-tolled-m0/</guid>
-          
-          
-          <category>transportation</category>
-          
-          <category>hungary</category>
           
         </item>
       
