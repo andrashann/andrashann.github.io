@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A couple of lines of Python for a night of family fun | hann.io</title>
+  <meta name="description" content="Have you ever wondered what words you can spell out using wooden cubes that have letters on each face? I have.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2021/words-in-wooden-blocks/">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="A couple of lines of Python for a night of family fun" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2021/words-in-wooden-blocks/" />
+  <meta property="og:description" content="Have you ever wondered what words you can spell out using wooden cubes that have letters on each face? I have." />
+  <meta property="og:image" content="https://hann.io/assets/og/wooden_blocks.jpg" />
+  <meta property="article:published_time" content="2021-03-09T00:00:00+01:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>A couple of lines of Python for a night of family fun</h1>
+<p class="subtitle">March 9, 2021
+
+</p>
+
+<p>Have you ever wondered what words you can spell out using wooden cubes that have letters on each face? I have.</p>
+
+<!--more-->
+
+<p>During my latest visit to my mother, I found some old wooden blocks with letters on each face on the kitchen table. I knew that these were hers from her childhood, but I was not sure what she had been using them for now. As it turns out, they can be used for a number of things: they can be put under her laptop to improve air flow and cooling, or they can be used to prop the kitchen window open to prevent a gust of wind slamming it shut.</p>
+
+<p>During our conversation, we started playing around with the blocks. One of us  suggested that we should try to find all the words we can spell out using the letters on them.</p>
+
+<p>Okay, it was probably me who suggested this.</p>
+
+<h2 id="programming--thinking-hard">Programming &gt; thinking hard</h2>
+
+<p>After we found a couple of words, I started losing interest. After all, how can we be sure we found all of them unless we brute force all the options? That would be approximately 6³ · 3!=1296 potential words, which is too many for my liking.<label for="sn-id-variations" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-variations" class="margin-toggle" /><span class="sidenote"> If there are duplicate letters on the cubes, there are fewer options. </span></p>
+
+<p>Programming is sometimes easier than thinking, so I wrote a script to find  all the sensible words can be made using the letters on these cubes. Using the script, it was a more interesting game: I became the host and let my mother know how many undiscovered words she still had to find. When she got stuck, I could even help out a bit.</p>
+
+<h3 id="an-algorithm-for-the-cubes">An algorithm for the cubes</h3>
+
+<p>The algorithm to find the words on the cubes is actually quite simple:</p>
+
+<ol>
+  <li>Get a list of words from the dictionary.</li>
+  <li>If the words have as many letters as cubes, check if (for any permutation of the cubes) we find each letter on one of the cubes. If so, we can use the cubes to spell out the words so we have a match. If the word is too short or too long, don’t even bother checking it.</li>
+  <li>List out all the matching words we found.</li>
+</ol>
+
+<p>The only challenging part is getting a list of valid words. Luckily, this can be done via the <a href="https://github.com/LibreOffice/dictionaries">Dictionaries</a> repository of <a href="https://www.libreoffice.org/">LibreOffice</a>, an open source office suite. If you are interested in the actual code of the algorithm, check out <a href="https://github.com/andrashann/words-in-letter-blocks/blob/main/main.py">my GitHub repository for the project</a>.</p>
+
+<p>Admittedly, since there is only a not too high number of words in the dictionary, I did not bother optimizing the code too much — it runs very fast with three cubes and scales reasonably for more cubes or more than six letters per “cube”. Pull requests for optimization are welcome!</p>
+
+<h3 id="making-it-accessible">Making it accessible</h3>
+
+<p>Having code on GitHub is fantastic, however, not many people will actually bother with downloading and running the code. That’s why I decided to set up my project as a simple API, hosted on Heroku.<label for="sn-id-heroku" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-heroku" class="margin-toggle" /><span class="sidenote"> Please note that the code is running on a free instance on Heroku, which gets shut down after a period of inactivity. If you are to first one to visit it in a while, you might have to wait a few seconds for the API to get going. If you submit another request, it should be much faster. </span> The documentation of the API can be found <a href="https://letter-blocks.herokuapp.com/">here</a>, provided by FastAPI on the Heroku deployment.</p>
+
+<p>Using the extremely easy static website hosting provided by GitHub Pages, I also created <a href="http://hann.io/words-in-letter-blocks/">a highly user-friendly front-end</a> for the project. This latter one is the link I shared with my mother so that she can play around more with the cubes.</p>
+
+<p><span style="display:block;width:100%;text-align:center">❧</span></p>
+
+<p>While I enjoyed this project quite a lot, writing code <a href="https://xkcd.com/1319/">might not always be the best solution</a> — it certainly has a fixed cost (mostly time). If, like me, you try to do it during a social event, people might just leave. In this case, I was lucky: my mother did not leave when I opened up my laptop to write the code for this project, and after tinkering for a couple of minutes, I was actually ready and we got going with the game. This ended up being a lot of fun and all matching words were found in the end.</p>
+
+<p><span style="display:block;width:100%;text-align:center">❧</span></p>
+
+<p><em>Cover photo: Letter blocks. © the Author, 2021. Creative Commons CC BY-NC-SA 4.0</em></p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2021/words-in-wooden-blocks/"
+this.page.identifier = "/articles/2021/words-in-wooden-blocks"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">A couple of lines of Python for a night of family fun - March 9, 2021 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

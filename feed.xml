@@ -10,9 +10,9 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Oct 2021 15:23:23 +0200</pubDate>
-    <lastBuildDate>Thu, 07 Oct 2021 15:23:23 +0200</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <pubDate>Sun, 26 Dec 2021 22:09:21 +0100</pubDate>
+    <lastBuildDate>Sun, 26 Dec 2021 22:09:21 +0100</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
     
           
         <item>
@@ -39,6 +39,35 @@
           <category>economics</category>
           
           <category>product</category>
+          
+        </item>
+      
+    
+          
+        <item>
+          <title>A couple of lines of Python for a night of family fun</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2021/words-in-wooden-blocks/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/wooden_blocks.jpg" class="attachment-full size-full" alt="A couple of lines of Python for a night of family fun" />
+                  </a>
+                </p>
+            
+            <p>Have you ever wondered what words you can spell out using wooden cubes that have letters on each face? I have.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Tue, 09 Mar 2021 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2021/words-in-wooden-blocks/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2021/words-in-wooden-blocks/</guid>
+          
+          
+          <category>python</category>
+          
+          <category>game</category>
           
         </item>
       
@@ -214,7 +243,7 @@
                   </a>
                 </p>
             
-            <p>I have recently released my first Python package, <code class="highlighter-rouge">gpxslicer</code>, a  simple tool to cut GPX track logs into smaller segments. It is now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.</p>
+            <p>I have recently released my first Python package, <code class="language-plaintext highlighter-rouge">gpxslicer</code>, a  simple tool to cut GPX track logs into smaller segments. It is now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.</p>
 
 
             ]]>
@@ -404,37 +433,6 @@
           <category>javascript</category>
           
           <category>osm</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>Where have the camels gone?</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2016/where-have-the-camels-gone/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/teveclub_screenshot.png" class="attachment-full size-full" alt="Where have the camels gone?" />
-                  </a>
-                </p>
-            
-            <p><a href="http://www.teveclub.hu">teveclub.hu</a> used to be one of the most well-known websites among Hungarian teenagers. It is a Neopets clone where you can raise your own camel: feed it, and teach it various tricks day by day. I had the feeling that the site was slowly dying. I used data from <a href="https://archive.org/web/">archive.org</a> to verify this hypothesis and I found that it was true: the total number of camels in the system has dropped from the ~320 thousand peak in 2006 to less than 26 thousand in 2018.</p>
-
-
-            ]]>
-          </description>
-          <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2016/where-have-the-camels-gone/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2016/where-have-the-camels-gone/</guid>
-          
-          
-          <category>hungary</category>
-          
-          <category>graph</category>
-          
-          <category>python</category>
           
         </item>
       

@@ -86,9 +86,9 @@
 
 <p>We will use <a href="http://overpass-turbo.eu">Overpass Turbo</a>, a friendly interface to the Overpass API to run a simple query that finds museums in <a href="https://en.wikipedia.org/wiki/Szeged">Szeged</a>, a city in Hungary.</p>
 
-<p><figure class="fullwidth"><img src="/assets/img/overpass/overpass-turbo.png" /><figcaption><span>The <a href="http://overpass-turbo.eu">Overpass Turbo</a> interface showing a query to get museums in Szeged and its results. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors.</span></figcaption></figure></p>
+<p><figure class="fullwidth"><img src="/assets/img/overpass/overpass-turbo.png" alt="" /><figcaption><span>The <a href="http://overpass-turbo.eu">Overpass Turbo</a> interface showing a query to get museums in Szeged and its results. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors.</span></figcaption></figure></p>
 
-<p>We want to get the location of these museums and additional tags associated with them.<label for="sn-id-tags" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-tags" class="margin-toggle" /><span class="sidenote"> Tags are a way of storing information about nodes, ways, or relations in key/value pairs. For example, a way might have the tag “highway=primary” indicating that it is a primary road. Read more on the <a href="https://wiki.openstreetmap.org/wiki/Tags">relevant Wiki page</a>. </span> We will either get a point (one latitude/longitude pair) or the outline of the building.<label for="sn-id-pointornot" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-pointornot" class="margin-toggle" /><span class="sidenote"> This depends on how the volunteer editors added the museum to the database. Is something missing? Follow the <a href="https://wiki.openstreetmap.org/wiki/Beginners%27_guide">Beginners’ Guide</a> to learn how to edit the map. </span> We can get these by typing <code class="highlighter-rouge">tourism=museum in Szeged</code> in the in the query wizard window of Overpass Turbo and hitting the <strong><code class="highlighter-rouge">build and run query</code></strong> button. You can do this yourself by going to <a href="http://overpass-turbo.eu">Overpass Turbo</a> and clicking the <strong><code class="highlighter-rouge">Wizard</code></strong> button and pasting the code snippet there.</p>
+<p>We want to get the location of these museums and additional tags associated with them.<label for="sn-id-tags" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-tags" class="margin-toggle" /><span class="sidenote"> Tags are a way of storing information about nodes, ways, or relations in key/value pairs. For example, a way might have the tag “highway=primary” indicating that it is a primary road. Read more on the <a href="https://wiki.openstreetmap.org/wiki/Tags">relevant Wiki page</a>. </span> We will either get a point (one latitude/longitude pair) or the outline of the building.<label for="sn-id-pointornot" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-pointornot" class="margin-toggle" /><span class="sidenote"> This depends on how the volunteer editors added the museum to the database. Is something missing? Follow the <a href="https://wiki.openstreetmap.org/wiki/Beginners%27_guide">Beginners’ Guide</a> to learn how to edit the map. </span> We can get these by typing <code class="language-plaintext highlighter-rouge">tourism=museum in Szeged</code> in the in the query wizard window of Overpass Turbo and hitting the <strong><code class="language-plaintext highlighter-rouge">build and run query</code></strong> button. You can do this yourself by going to <a href="http://overpass-turbo.eu">Overpass Turbo</a> and clicking the <strong><code class="language-plaintext highlighter-rouge">Wizard</code></strong> button and pasting the code snippet there.</p>
 
 <p>Overpass Turbo generates a query for us. After removing the comments that are added automatically (and that are not very useful unless you already know well how Overpass works), we get the following:</p>
 
@@ -106,47 +106,47 @@
 
 <h2 id="line-by-line-analysis">Line-by-line analysis</h2>
 
-<p>What is going on here? Let’s take this query apart! Note that just like in many programming languages, the semicolon <code class="highlighter-rouge">;</code> at the end of the line denotes the end of a statement.</p>
+<p>What is going on here? Let’s take this query apart! Note that just like in many programming languages, the semicolon <code class="language-plaintext highlighter-rouge">;</code> at the end of the line denotes the end of a statement.</p>
 
-<h3 id="the-outjsontimeout25-statement">The <code class="highlighter-rouge">[out:json][timeout:25];</code> statement</h3>
+<h3 id="the-outjsontimeout25-statement">The <code class="language-plaintext highlighter-rouge">[out:json][timeout:25];</code> statement</h3>
 
-<p><code class="highlighter-rouge">[out:json][timeout:25];</code> sets overall query parameters. In this case, we state that we want the output in JSON format and that the script should time out after waiting for 25 seconds.</p>
+<p><code class="language-plaintext highlighter-rouge">[out:json][timeout:25];</code> sets overall query parameters. In this case, we state that we want the output in JSON format and that the script should time out after waiting for 25 seconds.</p>
 
-<p>The output format could be <code class="highlighter-rouge">xml</code>, <code class="highlighter-rouge">json</code>, <code class="highlighter-rouge">csv</code>, <code class="highlighter-rouge">custom</code>, or <code class="highlighter-rouge">popup</code>. XML and JSON are similar to each other: a non-tabular format that has all the information you requested. CSV directly generates tabular data to be used in spreadsheets or elsewhere; it also requires further parameters. The other two options are rarely used. Documentation for all these options can be found <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Output_Format_.28out:.29">here</a>.</p>
+<p>The output format could be <code class="language-plaintext highlighter-rouge">xml</code>, <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">csv</code>, <code class="language-plaintext highlighter-rouge">custom</code>, or <code class="language-plaintext highlighter-rouge">popup</code>. XML and JSON are similar to each other: a non-tabular format that has all the information you requested. CSV directly generates tabular data to be used in spreadsheets or elsewhere; it also requires further parameters. The other two options are rarely used. Documentation for all these options can be found <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Output_Format_.28out:.29">here</a>.</p>
 
 <p>As for the timeout: sometimes you might notice that this happens to your query. In this case, you might want to increase the timeout setting. Be mindful though that the API servers provide a free service you share with others. Do not query too much data at the same time and do not let your queries run for too long – your query might get denied if you request too much/too often.</p>
 
-<h3 id="the-geocodeareaszeged-searcharea-statement">The <code class="highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> statement</h3>
+<h3 id="the-geocodeareaszeged-searcharea-statement">The <code class="language-plaintext highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> statement</h3>
 
-<p><code class="highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> assigns the area called Szeged to a variable called searchArea.</p>
+<p><code class="language-plaintext highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> assigns the area called Szeged to a variable called searchArea.</p>
 
 <p><figure><img src="/assets/img/overpass/szeged_aerial.jpg" alt="" /><figcaption><span>Aerial photo of Szeged, taken in 1989. The <a href="https://en.wikipedia.org/wiki/Votive_Church,_Szeged">Votive Church</a> is in the middle of the photo with the <a href="https://en.wikipedia.org/wiki/Tisza">Tisza</a> river behind it. The white building in the park on the left of the river is the <a href="https://en.wikipedia.org/wiki/M%C3%B3ra_Ferenc_M%C3%BAzeum">Móra Ferenc Museum</a>. <em><a href="http://fortepan.hu/?image_id=40715">FORTEPAN/Urbán Tamás.</a> Creative Commons CC-BY-SA-3.0</em></span></figcaption></figure></p>
 
-<p><code class="highlighter-rouge">{{geocodeArea:Szeged}}</code> is actually not pure Overpass QL but an Overpass Turbo Shortcut. These shortcuts are provided by Overpass Turbo to make writing queries easier. In this case, the shortcut is used to find the area called Szeged, so that we do not have to manually find its ID to run the query.<label for="sn-id-shortcuts" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-shortcuts" class="margin-toggle" /><span class="sidenote"> You can read more about Overpass Turbo shortcuts on the <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries">Wiki</a>. </span></p>
+<p><code class="language-plaintext highlighter-rouge">{{geocodeArea:Szeged}}</code> is actually not pure Overpass QL but an Overpass Turbo Shortcut. These shortcuts are provided by Overpass Turbo to make writing queries easier. In this case, the shortcut is used to find the area called Szeged, so that we do not have to manually find its ID to run the query.<label for="sn-id-shortcuts" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-shortcuts" class="margin-toggle" /><span class="sidenote"> You can read more about Overpass Turbo shortcuts on the <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries">Wiki</a>. </span></p>
 
-<p>If you click <strong><code class="highlighter-rouge">Export</code></strong> then under <strong><code class="highlighter-rouge">Query</code></strong> select <strong><code class="highlighter-rouge">Convert to OverpassQL</code></strong>, you get the actual query with the shortcuts expanded into their actual values. In our case, we can see that the line gets replaced with <code class="highlighter-rouge">area(3601025105)-&gt;.searchArea;</code>,<label for="mn-id-changes" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-changes" class="margin-toggle" /><span class="marginnote">IDs like this or any of the specific results (node details, tags, dates, anything) can change as editors add data to the map. Therefore, these specifics might get outdated in this article at one point, but this should not hinder the understanding of its material. </span> so we now know that the area ID of Szeged is 3601025105.</p>
+<p>If you click <strong><code class="language-plaintext highlighter-rouge">Export</code></strong> then under <strong><code class="language-plaintext highlighter-rouge">Query</code></strong> select <strong><code class="language-plaintext highlighter-rouge">Convert to OverpassQL</code></strong>, you get the actual query with the shortcuts expanded into their actual values. In our case, we can see that the line gets replaced with <code class="language-plaintext highlighter-rouge">area(3601025105)-&gt;.searchArea;</code>,<label for="mn-id-changes" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-changes" class="margin-toggle" /><span class="marginnote">IDs like this or any of the specific results (node details, tags, dates, anything) can change as editors add data to the map. Therefore, these specifics might get outdated in this article at one point, but this should not hinder the understanding of its material. </span> so we now know that the area ID of Szeged is 3601025105.</p>
 
-<h3 id="-and-"><code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code></h3>
+<h3 id="-and-"><code class="language-plaintext highlighter-rouge">(</code> and <code class="language-plaintext highlighter-rouge">);</code></h3>
 
-<p><code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code> indicate that we would like to get a union of the searches that we see on the next three lines.</p>
+<p><code class="language-plaintext highlighter-rouge">(</code> and <code class="language-plaintext highlighter-rouge">);</code> indicate that we would like to get a union of the searches that we see on the next three lines.</p>
 
-<h3 id="node-way-and-relation"><code class="highlighter-rouge">node[...](...);</code>, <code class="highlighter-rouge">way[...](...);</code>, and <code class="highlighter-rouge">relation[...](...);</code></h3>
+<h3 id="node-way-and-relation"><code class="language-plaintext highlighter-rouge">node[...](...);</code>, <code class="language-plaintext highlighter-rouge">way[...](...);</code>, and <code class="language-plaintext highlighter-rouge">relation[...](...);</code></h3>
 
-<p><code class="highlighter-rouge">node["tourism"="museum"](area.searchArea);</code> can be split up in the following parts:</p>
+<p><code class="language-plaintext highlighter-rouge">node["tourism"="museum"](area.searchArea);</code> can be split up in the following parts:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">node</code> indicates that we want to search for nodes (points)</li>
-  <li><code class="highlighter-rouge">["tourism"="museum"]</code> is a filter for the value of the <code class="highlighter-rouge">tourism</code> key of the node: it should exist and its value should be <code class="highlighter-rouge">museum</code> (see <a href="https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dmuseum">relevant Wiki page</a>).</li>
-  <li><code class="highlighter-rouge">(area.searchArea)</code> means that we want to filter by area: the parentheses show that this is a filter, <code class="highlighter-rouge">area</code> shows that we filter by area and <code class="highlighter-rouge">.searchArea</code> is the variable we defined above. We could use an area ID here instead of a variable; since we know that the area ID of Szeged is 3601025105, a direct way to write this would be <code class="highlighter-rouge">(area:3601025105)</code>. Notice that we now have a colon to indicate that it is an ID. (See the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_area_.28area.29">Wiki</a> for more information on this).</li>
+  <li><code class="language-plaintext highlighter-rouge">node</code> indicates that we want to search for nodes (points)</li>
+  <li><code class="language-plaintext highlighter-rouge">["tourism"="museum"]</code> is a filter for the value of the <code class="language-plaintext highlighter-rouge">tourism</code> key of the node: it should exist and its value should be <code class="language-plaintext highlighter-rouge">museum</code> (see <a href="https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dmuseum">relevant Wiki page</a>).</li>
+  <li><code class="language-plaintext highlighter-rouge">(area.searchArea)</code> means that we want to filter by area: the parentheses show that this is a filter, <code class="language-plaintext highlighter-rouge">area</code> shows that we filter by area and <code class="language-plaintext highlighter-rouge">.searchArea</code> is the variable we defined above. We could use an area ID here instead of a variable; since we know that the area ID of Szeged is 3601025105, a direct way to write this would be <code class="language-plaintext highlighter-rouge">(area:3601025105)</code>. Notice that we now have a colon to indicate that it is an ID. (See the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_area_.28area.29">Wiki</a> for more information on this).</li>
 </ul>
 
-<p><code class="highlighter-rouge">way[...](...);</code> and <code class="highlighter-rouge">relation[...](...);</code> are essentially the same but searching for ways and relations instead of nodes. Finally, as mentioned above, <code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">);</code> takes the union of these three queries.</p>
+<p><code class="language-plaintext highlighter-rouge">way[...](...);</code> and <code class="language-plaintext highlighter-rouge">relation[...](...);</code> are essentially the same but searching for ways and relations instead of nodes. Finally, as mentioned above, <code class="language-plaintext highlighter-rouge">(</code> and <code class="language-plaintext highlighter-rouge">);</code> takes the union of these three queries.</p>
 
-<h3 id="getting-the-data-part-1-out-body">Getting the data, part 1: <code class="highlighter-rouge">out body;</code></h3>
+<h3 id="getting-the-data-part-1-out-body">Getting the data, part 1: <code class="language-plaintext highlighter-rouge">out body;</code></h3>
 
-<p><code class="highlighter-rouge">out</code> is a command to actually gather the data. We will tackle the <code class="highlighter-rouge">body</code> part when we discuss the <code class="highlighter-rouge">out skel qt;</code> line, for now, let’s just accept it as a parameter of <code class="highlighter-rouge">out</code> (it tells the API <em>what</em> we want to get).</p>
+<p><code class="language-plaintext highlighter-rouge">out</code> is a command to actually gather the data. We will tackle the <code class="language-plaintext highlighter-rouge">body</code> part when we discuss the <code class="language-plaintext highlighter-rouge">out skel qt;</code> line, for now, let’s just accept it as a parameter of <code class="language-plaintext highlighter-rouge">out</code> (it tells the API <em>what</em> we want to get).</p>
 
-<p>If we do not add <code class="highlighter-rouge">out;</code>, we will not get actual results. Try running the following code in Overpass Turbo by pasting it there and pressing the <strong><code class="highlighter-rouge">Run</code></strong> button:</p>
+<p>If we do not add <code class="language-plaintext highlighter-rouge">out;</code>, we will not get actual results. Try running the following code in Overpass Turbo by pasting it there and pressing the <strong><code class="language-plaintext highlighter-rouge">Run</code></strong> button:</p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">out</span><span class="o">:</span><span class="n">json</span><span class="p">][</span><span class="n">timeout</span><span class="o">:</span><span class="mi">25</span><span class="p">];</span>
 <span class="p">{{</span><span class="n">geocodeArea</span><span class="o">:</span><span class="n">Szeged</span><span class="p">}}</span><span class="o">-&gt;</span><span class="p">.</span><span class="n">searchArea</span><span class="p">;</span>
@@ -157,7 +157,7 @@
 <span class="p">);</span>
 </code></pre></div></div>
 
-<p>Overpass Turbo will not display a map because it receives no geo data. It will display a response similar to the following one in the <strong><code class="highlighter-rouge">Data</code></strong> tab:</p>
+<p>Overpass Turbo will not display a map because it receives no geo data. It will display a response similar to the following one in the <strong><code class="language-plaintext highlighter-rouge">Data</code></strong> tab:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w">
@@ -193,15 +193,15 @@
 <span class="p">.</span><span class="n">my_museums</span> <span class="n">out</span> <span class="n">body</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Just like when we defined the search area, the <code class="highlighter-rouge">-&gt;</code> operator is used to assign a result set to a variable (whose name must start with a period). In programming terms, if we do not return this variable, it just gets destroyed after our query runs. <code class="highlighter-rouge">out</code> is used in this case to actually “collect” its results. It does not return a new set but updates the original one.</p>
+<p>Just like when we defined the search area, the <code class="language-plaintext highlighter-rouge">-&gt;</code> operator is used to assign a result set to a variable (whose name must start with a period). In programming terms, if we do not return this variable, it just gets destroyed after our query runs. <code class="language-plaintext highlighter-rouge">out</code> is used in this case to actually “collect” its results. It does not return a new set but updates the original one.</p>
 
-<h3 id="getting-the-data-part-2-the--command">Getting the data, part 2: the <code class="highlighter-rouge">&gt;</code> command</h3>
+<h3 id="getting-the-data-part-2-the--command">Getting the data, part 2: the <code class="language-plaintext highlighter-rouge">&gt;</code> command</h3>
 
 <p>The atomic data type of OpenStreetMap is a node. Ways (lines) consist of nodes and relations consist of relations, ways, and/or nodes.<label for="sn-id-elements" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-elements" class="margin-toggle" /><span class="sidenote"> Read the <a href="https://wiki.openstreetmap.org/wiki/Elements">relevant Wiki page</a> to learn more about elements and their types. </span></p>
 
 <!--The `>` (recurse down) statement, just like `out`, is a *standalone query* according to the Wiki nomenclature. -->
 
-<p>Downwards recursion, <code class="highlighter-rouge">&gt;</code>, is the command to get the elements that build up the element in question. When we call <code class="highlighter-rouge">&gt;</code> on a result set, it gets its members. As the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_down_.28.3E.29">relevant Wiki section</a> puts it, it returns:</p>
+<p>Downwards recursion, <code class="language-plaintext highlighter-rouge">&gt;</code>, is the command to get the elements that build up the element in question. When we call <code class="language-plaintext highlighter-rouge">&gt;</code> on a result set, it gets its members. As the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Recurse_down_.28.3E.29">relevant Wiki section</a> puts it, it returns:</p>
 
 <ul>
   <li>all <strong>nodes</strong> that are part of a <strong>way</strong> which appears in the <strong>input</strong> set; plus</li>
@@ -209,9 +209,9 @@
   <li>all <strong>nodes</strong> that are part of a <strong>way</strong> which appears in the <strong>result</strong> set</li>
 </ul>
 
-<p>The last of these three mean that we do not need to use <code class="highlighter-rouge">&gt;</code> twice to get the nodes of the ways that are parts of a relation in our original data, it is automatically gathered for us.</p>
+<p>The last of these three mean that we do not need to use <code class="language-plaintext highlighter-rouge">&gt;</code> twice to get the nodes of the ways that are parts of a relation in our original data, it is automatically gathered for us.</p>
 
-<p><label for="mn-id-rdr" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-rdr" class="margin-toggle" /><span class="marginnote">If we use the <em>recurse down relations</em> command, <code class="highlighter-rouge">&gt;&gt;</code>, it also recursively returns all <strong>relations</strong> that are members of a <strong>relation</strong> appearing in the <strong>input</strong> set. This is important if we have relations that are built up of relations in our initial result set. One could typically just use <code class="highlighter-rouge">&gt;&gt;</code> to ensure they get all the data. </span> We need this recursion because if a museum we got in the result set is defined as a way or relation (because it is not just one node but the outline of a building), just having the details of the way (or relation) is not enough to actually display it. We also need the details of the nodes that are members of this way (or relation).</p>
+<p><label for="mn-id-rdr" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-rdr" class="margin-toggle" /><span class="marginnote">If we use the <em>recurse down relations</em> command, <code class="language-plaintext highlighter-rouge">&gt;&gt;</code>, it also recursively returns all <strong>relations</strong> that are members of a <strong>relation</strong> appearing in the <strong>input</strong> set. This is important if we have relations that are built up of relations in our initial result set. One could typically just use <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> to ensure they get all the data. </span> We need this recursion because if a museum we got in the result set is defined as a way or relation (because it is not just one node but the outline of a building), just having the details of the way (or relation) is not enough to actually display it. We also need the details of the nodes that are members of this way (or relation).</p>
 
 <p>For example, one of the museums in Szeged is called <em>Fekete Ház</em>. Its data in OpenStreetMap is the following (with some node IDs omitted for brevity):</p>
 
@@ -233,21 +233,21 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>We know that we need nodes <code class="highlighter-rouge">1076957101</code>, <code class="highlighter-rouge">4794113061</code>, <code class="highlighter-rouge">1076957033</code> to display the outline of the building, but we do not get their details (their coordinates and other tags) from the server unless we specifically ask for them with the recursion statement.</p>
+<p>We know that we need nodes <code class="language-plaintext highlighter-rouge">1076957101</code>, <code class="language-plaintext highlighter-rouge">4794113061</code>, <code class="language-plaintext highlighter-rouge">1076957033</code> to display the outline of the building, but we do not get their details (their coordinates and other tags) from the server unless we specifically ask for them with the recursion statement.</p>
 
-<h3 id="getting-the-data-part-3-out-skel-qt">Getting the data, part 3: <code class="highlighter-rouge">out skel qt;</code></h3>
+<h3 id="getting-the-data-part-3-out-skel-qt">Getting the data, part 3: <code class="language-plaintext highlighter-rouge">out skel qt;</code></h3>
 
-<p>At this point in the query, we have the ways, nodes, and relations already in an output format (after <code class="highlighter-rouge">out body;</code>) plus we have some new nodes (and potentially ways) after the recurse down (<code class="highlighter-rouge">&gt;</code>) statement in our result set. The latter of the two has not yet been returned, so we need another <code class="highlighter-rouge">out</code> statement.</p>
+<p>At this point in the query, we have the ways, nodes, and relations already in an output format (after <code class="language-plaintext highlighter-rouge">out body;</code>) plus we have some new nodes (and potentially ways) after the recurse down (<code class="language-plaintext highlighter-rouge">&gt;</code>) statement in our result set. The latter of the two has not yet been returned, so we need another <code class="language-plaintext highlighter-rouge">out</code> statement.</p>
 
-<p>The <code class="highlighter-rouge">out</code> statement can take a few parameters, as <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Output_Format_.28out:.29">listed on the Wiki</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">out</code> statement can take a few parameters, as <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Output_Format_.28out:.29">listed on the Wiki</a>.</p>
 
-<p>Let’s get <code class="highlighter-rouge">qt</code> right out of the way: it is a parameter to describe how the data should be sorted in the output. This value makes the query faster, as it sorts data roughly geographically.</p>
+<p>Let’s get <code class="language-plaintext highlighter-rouge">qt</code> right out of the way: it is a parameter to describe how the data should be sorted in the output. This value makes the query faster, as it sorts data roughly geographically.</p>
 
-<p>Another parameter for <code class="highlighter-rouge">out</code> is the detail level of the data we return. The default level is <code class="highlighter-rouge">body</code>, which we used in the first <code class="highlighter-rouge">out</code> statement. It returns coordinates, key-value tags, and roles within relations – everything that you need to fully use the data. Another possible value for this parameter is <code class="highlighter-rouge">skel</code>, used in the second <code class="highlighter-rouge">out</code> statement of the query. Here we only return the information that is essential to display the object: IDs and coordinates (or member IDs, if the object is not a node but a way or relation).</p>
+<p>Another parameter for <code class="language-plaintext highlighter-rouge">out</code> is the detail level of the data we return. The default level is <code class="language-plaintext highlighter-rouge">body</code>, which we used in the first <code class="language-plaintext highlighter-rouge">out</code> statement. It returns coordinates, key-value tags, and roles within relations – everything that you need to fully use the data. Another possible value for this parameter is <code class="language-plaintext highlighter-rouge">skel</code>, used in the second <code class="language-plaintext highlighter-rouge">out</code> statement of the query. Here we only return the information that is essential to display the object: IDs and coordinates (or member IDs, if the object is not a node but a way or relation).</p>
 
-<p>For example, if we were to change our last line from <code class="highlighter-rouge">out skel</code> to <code class="highlighter-rouge">out body</code>, we would learn that one of the nodes that constitute the outline of one of the museum buildings is also a memorial plaque.</p>
+<p>For example, if we were to change our last line from <code class="language-plaintext highlighter-rouge">out skel</code> to <code class="language-plaintext highlighter-rouge">out body</code>, we would learn that one of the nodes that constitute the outline of one of the museum buildings is also a memorial plaque.</p>
 
-<p>If we use <code class="highlighter-rouge">body</code>, we receive the following information about this node:</p>
+<p>If we use <code class="language-plaintext highlighter-rouge">body</code>, we receive the following information about this node:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
@@ -263,7 +263,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>whereas with <code class="highlighter-rouge">skel</code> we really only get whatever is needed to display it (as a part of a line):</p>
+<p>whereas with <code class="language-plaintext highlighter-rouge">skel</code> we really only get whatever is needed to display it (as a part of a line):</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
@@ -272,13 +272,13 @@
   </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.1416321</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-<p>Part of our query has already been returned with <code class="highlighter-rouge">out body</code> before we called <code class="highlighter-rouge">out skel</code> on the second part (where we got additional data points with <code class="highlighter-rouge">&gt;</code>). Therefore, although we only get basic data of the new elements, we do not lose the already retrieved tag information of the previously returned elements.</p>
+<p>Part of our query has already been returned with <code class="language-plaintext highlighter-rouge">out body</code> before we called <code class="language-plaintext highlighter-rouge">out skel</code> on the second part (where we got additional data points with <code class="language-plaintext highlighter-rouge">&gt;</code>). Therefore, although we only get basic data of the new elements, we do not lose the already retrieved tag information of the previously returned elements.</p>
 
 <h2 id="getting-centroids">Getting centroids</h2>
 
 <p>It might be the case that you just want to display the locations of the museums on a map and therefore you don’t actually need the outlines of the buildings, just their overall location as a point.</p>
 
-<p>The <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#out">documentation</a> for <code class="highlighter-rouge">out</code> shows that you can request just the center of each object by using <code class="highlighter-rouge">out center</code>. Obviously, for nodes, this returns the node itself; for ways and relations, you get the centroid.<label for="sn-id-concave" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-concave" class="margin-toggle" /><span class="sidenote"> Note that this centroid can be outside of the shape if the shape is concave. </span></p>
+<p>The <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#out">documentation</a> for <code class="language-plaintext highlighter-rouge">out</code> shows that you can request just the center of each object by using <code class="language-plaintext highlighter-rouge">out center</code>. Obviously, for nodes, this returns the node itself; for ways and relations, you get the centroid.<label for="sn-id-concave" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-concave" class="margin-toggle" /><span class="sidenote"> Note that this centroid can be outside of the shape if the shape is concave. </span></p>
 
 <p>Therefore, we can change the end of our query by replacing</p>
 
@@ -292,7 +292,7 @@
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">out</span> <span class="n">body</span> <span class="n">center</span><span class="p">;</span> <span class="c1">// 'body' can be omitted because it is the default value</span>
 </code></pre></div></div>
 
-<p>and we get the centroids as expected. Notice that we only have one <code class="highlighter-rouge">out</code> statement here; this is because it immediately returns the centroid without the need to use <code class="highlighter-rouge">&gt;</code> to get the constituent elements of ways and relations.</p>
+<p>and we get the centroids as expected. Notice that we only have one <code class="language-plaintext highlighter-rouge">out</code> statement here; this is because it immediately returns the centroid without the need to use <code class="language-plaintext highlighter-rouge">&gt;</code> to get the constituent elements of ways and relations.</p>
 
 <h2 id="a-more-easily-readable-version-of-the-query">A more easily readable version of the query</h2>
 
