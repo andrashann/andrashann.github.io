@@ -10,9 +10,42 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Dec 2021 22:09:21 +0100</pubDate>
-    <lastBuildDate>Sun, 26 Dec 2021 22:09:21 +0100</lastBuildDate>
+    <pubDate>Wed, 11 May 2022 17:43:25 +0200</pubDate>
+    <lastBuildDate>Wed, 11 May 2022 17:43:25 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+          
+        <item>
+          <title>I reached a dead end in my research about road numbers (but this didn't stop me from making a cool map and finding some interesting insights)</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2022/reaching-a-dead-end/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/dead_end.jpg" class="attachment-full size-full" alt="I reached a dead end in my research about road numbers (but this didn't stop me from making a cool map and finding some interesting insights)" />
+                  </a>
+                </p>
+            
+            <p><em>On May 7, 2022 a <a href="https://qubit.hu/2022/05/07/hova-tunt-a-735-os-ut">Hungarian version of this article</a> has been published on Qubit.hu, a Hungarian popular science website.</em></p>
+
+<p>I have been wondering for some time about the system behind the numbering of roads in Hungary. The system itself is simple: the main road that leads from Budapest to Vienna is number 1, the other main roads radiating out from the capital are numbered in clockwise sequential order. Connecting roads have two (or sometimes three) digits. But <em>why</em> is this the system? How long has it been like this? What happened when the borders of the country changed?</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Mon, 07 Feb 2022 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2022/reaching-a-dead-end/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2022/reaching-a-dead-end/</guid>
+          
+          
+          <category>research</category>
+          
+          <category>maps</category>
+          
+          <category>hungary</category>
+          
+        </item>
+      
     
           
         <item>
@@ -402,37 +435,6 @@
           <category>python</category>
           
           <category>transportation</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>Sunrise, sunset</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2018/sunrise-sunset/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/sunrise_sunset_ams.jpg" class="attachment-full size-full" alt="Sunrise, sunset" />
-                  </a>
-                </p>
-            
-            <p>I grew up in Budapest and moved to the Netherlands a few years ago. I could not ignore the fact that the Sun has very different patterns: it rises later and sets later here than in Budapest. However, this difference is not uniform: my feeling was that the sun rises much later and sets about the same time during the winter. I saw the inverse in the summer: Dutch summer evenings are much longer, but dawn does not lag behind that much. I wanted to verify this feeling in a scalable manner, so I created a <a href="http://hann.io/sunrise-sunset/">website</a> (code <a href="https://github.com/andrashann/sunrise-sunset">here</a>) where you can pick two arbitrary locations on the globe and see a graph with their dawn/dusk times through the year.</p>
-
-
-            ]]>
-          </description>
-          <pubDate>Thu, 08 Mar 2018 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2018/sunrise-sunset/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2018/sunrise-sunset/</guid>
-          
-          
-          <category>maps</category>
-          
-          <category>javascript</category>
-          
-          <category>osm</category>
           
         </item>
       
