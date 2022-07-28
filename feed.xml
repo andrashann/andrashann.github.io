@@ -10,9 +10,40 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 May 2022 17:43:25 +0200</pubDate>
-    <lastBuildDate>Wed, 11 May 2022 17:43:25 +0200</lastBuildDate>
+    <pubDate>Thu, 28 Jul 2022 21:10:54 +0200</pubDate>
+    <lastBuildDate>Thu, 28 Jul 2022 21:10:54 +0200</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+          
+        <item>
+          <title>I almost bumped into a friend on the Hochschwab</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2022/almost-bumped-into-a-friend/">
+                    <img width="1200" height="630" src="https://hann.io/assets/og/hochschwab.jpg" class="attachment-full size-full" alt="I almost bumped into a friend on the Hochschwab" />
+                  </a>
+                </p>
+            
+            <p>On a weekend in July 2022, a couple of friends and I decided to go for a hike in the Hochschwab mountains in Austria. When I posted the photos a couple of days later, another friend commented that she, too, had been there during the weekend. Did we just miss each other by a couple of minutes, or were we much farther apart? I looked our track logs to find out.</p>
+
+
+            ]]>
+          </description>
+          <pubDate>Thu, 28 Jul 2022 00:00:00 +0200</pubDate>
+          <link>https://hann.io/articles/2022/almost-bumped-into-a-friend/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2022/almost-bumped-into-a-friend/</guid>
+          
+          
+          <category>maps</category>
+          
+          <category>gis</category>
+          
+          <category>python</category>
+          
+        </item>
+      
     
           
         <item>
@@ -407,34 +438,6 @@
           <category>python</category>
           
           <category>language</category>
-          
-        </item>
-      
-    
-          
-        <item>
-          <title>Nicely formatted transit schedules</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2018/nicely-formatted-transit-schedules/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/nice_timetables.jpg" class="attachment-full size-full" alt="Nicely formatted transit schedules" />
-                  </a>
-                </p>
-            
-            <p>I enjoy hiking, which most of the times involves using public transportation to get to the start of my hike and to get back home. Planning these trips used to be a major chore in Hungary before 2016, as there was no unified schedule database: one could only plan trips by train <em>or</em> bus, not together.  During these times I came up with a timetable format in which I manually collected transit options using the bus and train planner websites as well as a map to came up with potential routes. These days transit information is available via the <a href="https://developers.google.com/maps/documentation/directions/start">Google Directions API</a>, so I decided to revisit this format and I developed <a href="https://github.com/andrashann/generate-nice-timetables">a script</a> that creates it automatically.</p>
-
-            ]]>
-          </description>
-          <pubDate>Sat, 18 Aug 2018 00:00:00 +0200</pubDate>
-          <link>https://hann.io/articles/2018/nicely-formatted-transit-schedules/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2018/nicely-formatted-transit-schedules/</guid>
-          
-          
-          <category>python</category>
-          
-          <category>transportation</category>
           
         </item>
       

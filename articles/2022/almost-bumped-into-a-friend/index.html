@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>I almost bumped into a friend on the Hochschwab | hann.io</title>
+  <meta name="description" content="On a weekend in July 2022, a couple of friends and I decided to go for a hike in the Hochschwab mountains in Austria. When I posted the photos a couple of da...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2022/almost-bumped-into-a-friend/">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="I almost bumped into a friend on the Hochschwab" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2022/almost-bumped-into-a-friend/" />
+  <meta property="og:description" content="On a weekend in July 2022, a couple of friends and I decided to go for a hike in the Hochschwab mountains in Austria. When I posted the photos a couple of da..." />
+  <meta property="og:image" content="https://hann.io/assets/og/hochschwab.jpg" />
+  <meta property="article:published_time" content="2022-07-28T00:00:00+02:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>I almost bumped into a friend on the Hochschwab</h1>
+<p class="subtitle">July 28, 2022
+
+</p>
+
+<p>On a weekend in July 2022, a couple of friends and I decided to go for a hike in the Hochschwab mountains in Austria. When I posted the photos a couple of days later, another friend commented that she, too, had been there during the weekend. Did we just miss each other by a couple of minutes, or were we much farther apart? I looked our track logs to find out.</p>
+
+<!--more-->
+
+<p><figure><img src="/assets/img/hochschwab/hochschwab.jpg" alt="" /><figcaption><span>View from close to the peak of the Hochschwab. In the distance we can see the Schiestlhaus hütte, where our group had lunch and my friend stayed for the night. Photo © The Author, CC BY-NC-SA 3.0</span></figcaption></figure></p>
+
+<p>My first question was whether we actually walked past each other either in the parking lot or at the hütte we had lunch at. In other words: were we <em>ever</em> zero kilometers away from each other? Answering this was easy: I looked at the first track point for each minute for both of us then calculated the geographical distance using the Haversine formula.<label for="sn-id-haver" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-haver" class="margin-toggle" /><span class="sidenote"> This is a mountainous area, so to get the actual distance, it might make sense to take elevation into account as well. For the sake of simplicity, I ignored this. Read more about the formula <a href="https://en.wikipedia.org/wiki/Haversine_formula">here</a>. </span> If this distance ever reached (almost) zero, it means we were in fact very close. To look at the data, I graphed it in a very simple way: time on the <em>x</em> axis, the distance between us on the <em>y</em> axis.</p>
+
+<p><figure><img src="/assets/img/hochschwab/distgraph.png" alt="" /><figcaption><span>Distance between my friend and our group during our hike. Generated using the track logs we recorded during our hikes. © The Author, CC BY-NC-SA 3.0</span></figcaption></figure></p>
+
+<p>We can immediately see that we did not pass by each other, altough we <em>were</em> just one kilometer apart at one point. She started her hike an hour after us and finished around 16:00 UTC (18:00 local time) at the Schiestlhaus hütte – which is where our group had lunch not long before. We went on to the Voistaler hütte, another mountain hut, so the distance between us increases again towards the end of the day.</p>
+
+<p>I also wanted to compare where we were at specific points in time during the day, so I created the following map using the same GPS track logs.</p>
+
+<p><figure class="fullwidth"><img src="/assets/img/hochschwab/hochschwab_map.jpg" alt="" /><figcaption><span>Comparison of the location of our group and my friend during our hikes to the Hochschwab. The blue track shows our route; the green one shows hers. The lines connecting the tracks connect points where we were at the same time (in five minute intervals); their color indicates our distance (the redder it is, the closer we are). Map © The Author, CC BY-NC-SA 3.0. Base map © OpenStreetMap contributors &amp; Thunderforest.</span></figcaption></figure></p>
+
+<p>On this map the blue track shows our route, the green shows hers. She took a longer but easier route up the mountain. The straight lines connecting the two tracks show where the two groups were located at the same point in time. Lines are shown in five minute intervals. Both of us started the hike from the Bodenbauer guest house; her group left about an hour after us, so there are no lines connecting the first part of the blue track to the green track. After that, the first few lines on the green track are relatively far from each other: she was quite fast there as that is a good quality forest road. We can also see that her group probably took a break at the westernmost point of the track as there are many lines coming from one point there connecting the green track to the blue one.</p>
+
+<p>As both groups ascend the mountain, albeit from different directions, the distance between us starts to decrease, and the connecting lines turn from yellow to orange and later red. We were on the peak before her and then continued to the Schiestlhaus hütte to have lunch. After a bit, we left and descended the mountain towards the Voistaler hütte, where we spent the night. They arrived to the Schiestlhaus not long after us, but the distance already starts to increase again. We missed each other by less than an hour.</p>
+
+<p>On the next day, my friend descended the mountain the same tough route we took up; we continued from the Voistaler hütte to Seewiesen, a village where we left one car, and returned to Bodenbauer, where we left the other one. I then left as I had other engagements; the others from the group went on for a short round trip hike from there. My friend arrived to Bodenbauer about half an hour after us; once again, we missed each other by just half an hour.</p>
+
+<p>Well, maybe we see each other next time!</p>
+
+<p><span style="display:block;width:100%;text-align:center">❧</span></p>
+
+<p>As usual, the code for the analysis is <a href="https://gist.github.com/andrashann/38b798326b0d5b6daf431f84ed55d0fb">available here</a>. However, you won’t be able to run the notebook as I did not include the GPX files – our recorded track logs – due to privacy reasons. You can still inspect the logic and the methods I used.</p>
+
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2022/almost-bumped-into-a-friend/"
+this.page.identifier = "/articles/2022/almost-bumped-into-a-friend"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">I almost bumped into a friend on the Hochschwab - July 28, 2022 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>
