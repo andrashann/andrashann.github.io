@@ -46,7 +46,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hann.io/articles/2020/introducing-gpxslicer/" />
   <meta property="og:description" content="I have recently released my first Python package, gpxslicer, a  simple tool to cut GPX track logs into smaller segments. It is now available on GitHub and Py..." />
-  <meta property="og:image" content="https://hann.io/assets/og/introducing-gpxslicer.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/introducing-gpxslicer.jpg" />
   <meta property="article:published_time" content="2020-01-28T00:00:00+01:00" />
   <!-- og end -->
 </head>
@@ -56,7 +56,7 @@
 <header>
     <nav class="group">
 				<a href="/">hann.io</a>
-	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
 	
 		
 		
@@ -72,6 +72,54 @@
       <h1>Introducing gpxslicer</h1>
 <p class="subtitle">January 28, 2020
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </p>
 
 <p>I have recently released my first Python package, <code class="language-plaintext highlighter-rouge">gpxslicer</code>, a  simple tool to cut GPX track logs into smaller segments. It is now available on <a href="https://github.com/andrashann/gpxslicer">GitHub</a> and <a href="https://pypi.org/project/gpxslicer/">PyPI</a>. The motivation behind creating it was simple: I wanted to automate tasks that I had done by hand too many times.</p>
@@ -84,7 +132,7 @@
 
 <p>In addition to points of interest, it is also very useful to know the distance between given points (e.g. from a village to the peak of the nearby mountain).</p>
 
-<p><figure><img src="/assets/img/gpxslicer/okt.jpg" alt="" /><figcaption><span>Photo of a map I created for hiking the <a href="https://en.wikipedia.org/wiki/National_Blue_Trail">Blue Trail</a>, with the village of <a href="https://hiking.waymarkedtrails.org/#?map=13!48.4754!21.4708">Bózsva</a> in the middle. Black dots indicate segment boundaries; numbers show the distance between the nearest black dots in ten meters. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>, <a href="https://www.heyjoe.hu">heyjoe.hu</a>, <a href="https://www.geocaching.hu">geocaching.hu</a>. Map tiles © <a href="https://turistautak.hu">turistautak.hu</a>, <a href="https://www.mapbox.com">Mapbox</a>, <a href="http://hdyc.neis-one.org/?Domcsi">dömcsi</a>. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/gpxslicer/okt.jpg" alt="" /><figcaption><span>Photo of a map I created for hiking the <a href="https://en.wikipedia.org/wiki/National_Blue_Trail">Blue Trail</a>, with the village of <a href="https://hiking.waymarkedtrails.org/#?map=13!48.4754!21.4708">Bózsva</a> in the middle. Black dots indicate segment boundaries; numbers show the distance between the nearest black dots in ten meters. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>, <a href="https://www.heyjoe.hu">heyjoe.hu</a>, <a href="https://www.geocaching.hu">geocaching.hu</a>. Map tiles © <a href="https://turistautak.hu">turistautak.hu</a>, <a href="https://www.mapbox.com">Mapbox</a>, <a href="http://hdyc.neis-one.org/?Domcsi">dömcsi</a>. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
 
 <p>The manual way of adding such distances to a map is to create the track between consecutive points by hand, importing these tracks into some <label for="sn-id-qgis" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="sn-id-qgis" class="margin-toggle" /><span class="marginnote">My choice of GIS software is <a href="https://www.qgis.org">QGIS</a>. I have used it in other projects as well: one about <a href="https://hann.io/articles/2013/revolutionary-street-names/">street names named after revolutionaries</a>, and another one about <a href="https://hann.io/articles/2015/grab-a-drink-while-you-wait-for-the-bus/">bus stops named after liquor stores</a>. </span>GIS software, and adding the length of the tracks as a label on the map.</p>
 
@@ -94,7 +142,7 @@
 
 <p>By finding points at a given interval along a track, we can create markers (e.g. at every kilometer) to enable easy distance measurements between any two points of the hike.</p>
 
-<p><figure><img src="/assets/img/gpxslicer/pieterpad.jpg" alt="" /><figcaption><span>Photo of a page of a booklet I created to collect stamps while hiking the <a href="https://en.wikipedia.org/wiki/Pieterpad">Pieterpad</a>, with the town of <a href="https://hiking.waymarkedtrails.org/#?map=13!53.3341!6.5081">Winsum</a> in the middle. Black dots with a with center indicate 1 kilometer segments along the trail. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>. Map © the Author, CC-BY-SA-NC-3.0. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/gpxslicer/pieterpad.jpg" alt="" /><figcaption><span>Photo of a page of a booklet I created to collect stamps while hiking the <a href="https://en.wikipedia.org/wiki/Pieterpad">Pieterpad</a>, with the town of <a href="https://hiking.waymarkedtrails.org/#?map=13!53.3341!6.5081">Winsum</a> in the middle. Black dots with a with center indicate 1 kilometer segments along the trail. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap Contributors</a>. Map © the Author, CC-BY-SA-NC-3.0. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
 
 <p>Alternatively, our aim could be to keep a given speed during a hike. In this case we can find points at intervals based on the distance we expect to cover in a given time period at this speed, which then allows us to see whether we are still on time. For example, in one instance I absolutely had to catch a given bus at the end of my hike as there was no other option to get home that day. Therefore, I wanted to make sure that I do not lose speed. I calculated that I had to walk at at least 4 km/h in order to safely catch the bus. Based on this, I put a point on the track every 2 kilometers – if thirty minutes passed since the previous point and I had not reached the next one, I knew that I was going too slow.</p>
 

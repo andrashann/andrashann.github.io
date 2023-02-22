@@ -46,7 +46,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hann.io/articles/2020/understanding-overpass/" />
   <meta property="og:description" content="If you want to use spatial data from OpenStreetMap, OpenStreetMap is more than just a free map: it is also a free database of global geographical data. If yo..." />
-  <meta property="og:image" content="https://hann.io/assets/og/understanding_overpass.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/understanding_overpass.jpg" />
   <meta property="article:published_time" content="2020-01-17T00:00:00+01:00" />
   <!-- og end -->
 </head>
@@ -56,7 +56,7 @@
 <header>
     <nav class="group">
 				<a href="/">hann.io</a>
-	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
 	
 		
 		
@@ -72,6 +72,54 @@
       <h1>Understanding Overpass, the API of OpenStreetMap</h1>
 <p class="subtitle">January 17, 2020
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </p>
 
 <p>If you want to use spatial data from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>,<label for="sn-id-whatisosm" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-whatisosm" class="margin-toggle" /><span class="sidenote"> OpenStreetMap is more than just a free map: it is also a free database of global geographical data. If you are not familiar with it, check out its <a href="https://wiki.openstreetmap.org/wiki/Main_Page">Wiki</a> to learn more. </span> one way to get it is via <a href="http://overpass-api.de/">Overpass</a>,<label for="sn-id-op" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-op" class="margin-toggle" /><span class="sidenote"> Read more about the Overpass API and its various endpoints <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">here</a>. </span> a read-only API of the OpenStreetMap database. While the API is extremely flexible, its unique language, Overpass QL is not very intuitive. This article takes a very simple query and dissects it into its smallest pieces. This will help you understand (and write) such queries.</p>
@@ -86,7 +134,7 @@
 
 <p>We will use <a href="http://overpass-turbo.eu">Overpass Turbo</a>, a friendly interface to the Overpass API to run a simple query that finds museums in <a href="https://en.wikipedia.org/wiki/Szeged">Szeged</a>, a city in Hungary.</p>
 
-<p><figure class="fullwidth"><img src="/assets/img/overpass/overpass-turbo.png" alt="" /><figcaption><span>The <a href="http://overpass-turbo.eu">Overpass Turbo</a> interface showing a query to get museums in Szeged and its results. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors.</span></figcaption></figure></p>
+<p><figure class="fullwidth"><img src="https://storage.googleapis.com/storage.hann.io/img/overpass/overpass-turbo.png" alt="" /><figcaption><span>The <a href="http://overpass-turbo.eu">Overpass Turbo</a> interface showing a query to get museums in Szeged and its results. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap </a> contributors.</span></figcaption></figure></p>
 
 <p>We want to get the location of these museums and additional tags associated with them.<label for="sn-id-tags" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-tags" class="margin-toggle" /><span class="sidenote"> Tags are a way of storing information about nodes, ways, or relations in key/value pairs. For example, a way might have the tag “highway=primary” indicating that it is a primary road. Read more on the <a href="https://wiki.openstreetmap.org/wiki/Tags">relevant Wiki page</a>. </span> We will either get a point (one latitude/longitude pair) or the outline of the building.<label for="sn-id-pointornot" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-pointornot" class="margin-toggle" /><span class="sidenote"> This depends on how the volunteer editors added the museum to the database. Is something missing? Follow the <a href="https://wiki.openstreetmap.org/wiki/Beginners%27_guide">Beginners’ Guide</a> to learn how to edit the map. </span> We can get these by typing <code class="language-plaintext highlighter-rouge">tourism=museum in Szeged</code> in the in the query wizard window of Overpass Turbo and hitting the <strong><code class="language-plaintext highlighter-rouge">build and run query</code></strong> button. You can do this yourself by going to <a href="http://overpass-turbo.eu">Overpass Turbo</a> and clicking the <strong><code class="language-plaintext highlighter-rouge">Wizard</code></strong> button and pasting the code snippet there.</p>
 
@@ -120,7 +168,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">{{geocodeArea:Szeged}}-&gt;.searchArea;</code> assigns the area called Szeged to a variable called searchArea.</p>
 
-<p><figure><img src="/assets/img/overpass/szeged_aerial.jpg" alt="" /><figcaption><span>Aerial photo of Szeged, taken in 1989. The <a href="https://en.wikipedia.org/wiki/Votive_Church,_Szeged">Votive Church</a> is in the middle of the photo with the <a href="https://en.wikipedia.org/wiki/Tisza">Tisza</a> river behind it. The white building in the park on the left of the river is the <a href="https://en.wikipedia.org/wiki/M%C3%B3ra_Ferenc_M%C3%BAzeum">Móra Ferenc Museum</a>. <em><a href="http://fortepan.hu/?image_id=40715">FORTEPAN/Urbán Tamás.</a> Creative Commons CC-BY-SA-3.0</em></span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/overpass/szeged_aerial.jpg" alt="" /><figcaption><span>Aerial photo of Szeged, taken in 1989. The <a href="https://en.wikipedia.org/wiki/Votive_Church,_Szeged">Votive Church</a> is in the middle of the photo with the <a href="https://en.wikipedia.org/wiki/Tisza">Tisza</a> river behind it. The white building in the park on the left of the river is the <a href="https://en.wikipedia.org/wiki/M%C3%B3ra_Ferenc_M%C3%BAzeum">Móra Ferenc Museum</a>. <em><a href="http://fortepan.hu/?image_id=40715">FORTEPAN/Urbán Tamás.</a> Creative Commons CC-BY-SA-3.0</em></span></figcaption></figure></p>
 
 <p><code class="language-plaintext highlighter-rouge">{{geocodeArea:Szeged}}</code> is actually not pure Overpass QL but an Overpass Turbo Shortcut. These shortcuts are provided by Overpass Turbo to make writing queries easier. In this case, the shortcut is used to find the area called Szeged, so that we do not have to manually find its ID to run the query.<label for="sn-id-shortcuts" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-shortcuts" class="margin-toggle" /><span class="sidenote"> You can read more about Overpass Turbo shortcuts on the <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries">Wiki</a>. </span></p>
 

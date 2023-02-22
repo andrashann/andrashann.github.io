@@ -46,7 +46,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hann.io/articles/2021/print-geocache-descriptions/" />
   <meta property="og:description" content="If you enjoy geocaching, you might want to go paperless and just bring a smartphone or GPS device with you on your treasure hunt. Alternatively, you might wa..." />
-  <meta property="og:image" content="https://hann.io/assets/og/geolada_leirasok.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/geolada_leirasok.jpg" />
   <meta property="article:published_time" content="2021-02-24T00:00:00+01:00" />
   <!-- og end -->
 </head>
@@ -56,7 +56,7 @@
 <header>
     <nav class="group">
 				<a href="/">hann.io</a>
-	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
 	
 		
 		
@@ -72,6 +72,54 @@
       <h1>A simple website and API for downloading and printing geocache information for offline use</h1>
 <p class="subtitle">February 24, 2021
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </p>
 
 <p>If you enjoy <a href="https://en.wikipedia.org/wiki/Geocaching">geocaching</a>, you might want to go paperless and just bring a smartphone or GPS device with you on your treasure hunt. Alternatively, you might want to have a backup with you on paper if anything goes wrong with your device. I wrote a simple web service that helps you with the second case.</p>
@@ -82,7 +130,7 @@
 
 <p>I tend to print geocache details, especially when I go on multi-day hikes. This was especially handy when I was on a 8 day long trip and my phone’s charging port broke on the third day. I had the coordinates of the caches stored on my hiking GPS device and had the descriptions printed, therefore I had no problem finding the caches.</p>
 
-<p><figure><img src="/assets/img/gcprint/gcnotes.jpg" alt="" /><figcaption><span>Printed details and logs of the first geocache in Hungary, <a href="https://geocaching.hu/caches.geo?id=70">GCEger</a>. Photo by the Author – CC BY-NC</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/gcprint/gcnotes.jpg" alt="" /><figcaption><span>Printed details and logs of the first geocache in Hungary, <a href="https://geocaching.hu/caches.geo?id=70">GCEger</a>. Photo by the Author – CC BY-NC</span></figcaption></figure></p>
 
 <p>Copying this information from the website – and filtering only the really necessary information – is a cumbersome task. Unsurprisingly, I am not a fan of cumbersome tasks and prefer to automate them as much as possible. This is why I wrote a script in Python to get the required information via the API, which is nice for myself, but does not help others. To allow other members of the Hungarian geocaching community to use the script, I decided to wrap it in a FastAPI environment and create <a href="https://geolada-leirasok.herokuapp.com/">an API</a> as well as a <a href="http://hann.io/get-geocache-descriptions/">very simple front end</a> for it that even non-technical people can use.</p>
 

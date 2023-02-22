@@ -46,7 +46,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hann.io/articles/2020/first-endeavor-generative-art/" />
   <meta property="og:description" content="Last year we organized an internal conference at my workplace and I volunteered to put together a booklet with the abstracts of the presentations. I wanted t..." />
-  <meta property="og:image" content="https://hann.io/assets/og/generative.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/generative.jpg" />
   <meta property="article:published_time" content="2020-04-17T00:00:00+02:00" />
   <!-- og end -->
 </head>
@@ -56,7 +56,7 @@
 <header>
     <nav class="group">
 				<a href="/">hann.io</a>
-	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
 	
 		
 		
@@ -72,13 +72,61 @@
       <h1>A first endeavor into generative art</h1>
 <p class="subtitle">April 17, 2020
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </p>
 
 <p>Last year we organized an internal conference at my workplace and I volunteered to put together a booklet with the abstracts of the presentations. I wanted to add photos of the authors, but I did not want them to look all the same.<label for="mn-id-actually" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-actually" class="margin-toggle" /><span class="marginnote">Actually, graphic design and layout editing was not new to me, I’ve always had a thing for this field. At some point during my bachelor’s in Economics I even considered moving abroad and studying it instead of finishing that degree. Instead of doing so, I just volunteered to design the faculty magazine. </span> I came up with the idea to have the photos on top of two rectangles of the same size but of two different colors, a bit offset from the photo – every photo should be paired with differently offset rectangles to add some unique design. Of course, I did not want to do this by hand, but that’s what I know Python for.</p>
 
 <!--more-->
 
-<p><figure><img src="/assets/img/progdes/originals.jpg" alt="" /><figcaption><span>Initial drawings for different photo layouts. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/progdes/originals.jpg" alt="" /><figcaption><span>Initial drawings for different photo layouts. Photo © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
 
 <p>Looking at the sketches gives a better overview of the idea than trying to describe it in words. We have three objects on top of each other: the two rectangles and the photo. They each take one of the horizontal positions (left, center, right) and one of the vertical positions (top, middle, bottom). Each position may only be taken by one of the objects. The photo must be on the top of the stack, but the order of the two rectangles can be switched. Therefore, we have 3! × 3! × 2! = 72 different potential patterns in this setup.</p>
 
@@ -86,7 +134,7 @@
 
 <p>To populate these SVG files, I first generated a cross product of the aforementioned dimensions and turned them into a list of lists. Each item has three ordered sublists: [x coordinates for each item; y coordinates for each item; the colors of the two rectangles]. As the next step I shuffle the outer list to have these in a random order and finally populate the SVG files with the generated rectangles and the image loaded from the computer.<label for="mn-id-border" class="margin-toggle"> ⊕</label><input type="checkbox" checked="checked" id="mn-id-border" class="margin-toggle" /><span class="marginnote">I actually created five rectangles: both colored rectangles and the photo got a white frame by having a slightly larger white rectangle behind them. </span> I highly recommend checking out the <a href="https://gist.github.com/andrashann/7e46d0b5ff88e3e8e64ed15033caa8d7">code</a> that I used; it provides a better understanding of what I did. (After all: the code <em>is</em> what I did.)</p>
 
-<p><figure><img src="/assets/img/progdes/output.png" alt="" /><figcaption><span>Sample output of varied layouts generated programmatically. Pictures from <a href="https://unsplash.com/">Unsplash</a> via <a href="http://unsample.net/">Unsample</a>. © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/progdes/output.png" alt="" /><figcaption><span>Sample output of varied layouts generated programmatically. Pictures from <a href="https://unsplash.com/">Unsplash</a> via <a href="http://unsample.net/">Unsample</a>. © the Author, CC-BY-SA-NC-3.0.</span></figcaption></figure></p>
 
 <p>And that’s it. This was a very simple project that took me about half an hour to write and saved me probably hours of daunting manual work; I just had to drag the SVGs into my desktop publishing application.</p>
 

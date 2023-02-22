@@ -10,9 +10,38 @@
     </image>
     <link>https://hann.io/</link>
     <atom:link href="https://hann.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Jul 2022 21:10:54 +0200</pubDate>
-    <lastBuildDate>Thu, 28 Jul 2022 21:10:54 +0200</lastBuildDate>
+    <pubDate>Wed, 22 Feb 2023 17:45:14 +0100</pubDate>
+    <lastBuildDate>Wed, 22 Feb 2023 17:45:14 +0100</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
+    
+          
+        <item>
+          <title>Blast from the past: romkocsmak.com</title>
+          <description>
+            <![CDATA[
+            
+                <p>
+                  <a href="https://hann.io/articles/2023/bftp-romkocsmak-com/">
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/romkocsmak.jpg" class="attachment-full size-full" alt="Blast from the past: romkocsmak.com" />
+                  </a>
+                </p>
+            
+            In 2012, with the help of a friend, I created a website that was a simple quiz: does this bar or pub exist in Budapest? Since all the new places seemed to follow the same naming pattern, we could easily come up with a bunch of fake and real names to use in a quiz. I wrote the code in PHP, a language I was completely unfamiliar with, then put the page online at romkocsmak.com, Hungarian for "ruinbars.com". And then never advertised it anywhere. To keep it from being lost forever, I recently spent too much time getting it up and running again – and I am sharing it here.
+            ]]>
+          </description>
+          <pubDate>Mon, 06 Feb 2023 00:00:00 +0100</pubDate>
+          <link>https://hann.io/articles/2023/bftp-romkocsmak-com/</link>
+          <guid isPermaLink="true">https://hann.io/articles/2023/bftp-romkocsmak-com/</guid>
+          
+          
+          <category>php</category>
+          
+          <category>website</category>
+          
+          <category>blast_from_the_past</category>
+          
+        </item>
+      
     
           
         <item>
@@ -22,7 +51,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2022/almost-bumped-into-a-friend/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/hochschwab.jpg" class="attachment-full size-full" alt="I almost bumped into a friend on the Hochschwab" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/hochschwab.jpg" class="attachment-full size-full" alt="I almost bumped into a friend on the Hochschwab" />
                   </a>
                 </p>
             
@@ -53,15 +82,11 @@
             
                 <p>
                   <a href="https://hann.io/articles/2022/reaching-a-dead-end/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/dead_end.jpg" class="attachment-full size-full" alt="I reached a dead end in my research about road numbers (but this didn't stop me from making a cool map and finding some interesting insights)" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/dead_end.jpg" class="attachment-full size-full" alt="I reached a dead end in my research about road numbers (but this didn't stop me from making a cool map and finding some interesting insights)" />
                   </a>
                 </p>
             
-            <p><em>On May 7, 2022 a <a href="https://qubit.hu/2022/05/07/hova-tunt-a-735-os-ut">Hungarian version of this article</a> has been published on Qubit.hu, a Hungarian popular science website.</em></p>
-
-<p>I have been wondering for some time about the system behind the numbering of roads in Hungary. The system itself is simple: the main road that leads from Budapest to Vienna is number 1, the other main roads radiating out from the capital are numbered in clockwise sequential order. Connecting roads have two (or sometimes three) digits. But <em>why</em> is this the system? How long has it been like this? What happened when the borders of the country changed?</p>
-
-
+            I have been wondering for some time about the system behind the numbering of roads in Hungary. The system itself is simple: the main road that leads from Budapest to Vienna is number 1, the other main roads radiating out from the capital are numbered in clockwise sequential order. Connecting roads have two (or sometimes three) digits. But why is this the system? How long has it been like this? What happened when the borders of the country changed?
             ]]>
           </description>
           <pubDate>Mon, 07 Feb 2022 00:00:00 +0100</pubDate>
@@ -86,7 +111,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2021/why-cheap-rental-car/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/juuve_car.jpg" class="attachment-full size-full" alt="Why did I get to drive this car for €0.01 per kilometer?" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/juuve_car.jpg" class="attachment-full size-full" alt="Why did I get to drive this car for €0.01 per kilometer?" />
                   </a>
                 </p>
             
@@ -115,7 +140,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2021/words-in-wooden-blocks/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/wooden_blocks.jpg" class="attachment-full size-full" alt="A couple of lines of Python for a night of family fun" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/wooden_blocks.jpg" class="attachment-full size-full" alt="A couple of lines of Python for a night of family fun" />
                   </a>
                 </p>
             
@@ -144,7 +169,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2021/print-geocache-descriptions/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/geolada_leirasok.jpg" class="attachment-full size-full" alt="A simple website and API for downloading and printing geocache information for offline use" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/geolada_leirasok.jpg" class="attachment-full size-full" alt="A simple website and API for downloading and printing geocache information for offline use" />
                   </a>
                 </p>
             
@@ -175,7 +200,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/manhattan-distance/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/manhattan_distance.jpg" class="attachment-full size-full" alt="Is there enough space in Manhattan to stay six feet apart?" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/manhattan_distance.jpg" class="attachment-full size-full" alt="Is there enough space in Manhattan to stay six feet apart?" />
                   </a>
                 </p>
             
@@ -208,7 +233,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/graphing-construction-on-tram-line-6/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/tram6_reno.jpg" class="attachment-full size-full" alt="Graphing Construction on Tram Line 6 in Budapest" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/tram6_reno.jpg" class="attachment-full size-full" alt="Graphing Construction on Tram Line 6 in Budapest" />
                   </a>
                 </p>
             
@@ -239,7 +264,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/get-public-transport-timetables/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/gptt.jpg" class="attachment-full size-full" alt="Get Public Transport Timetables" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/gptt.jpg" class="attachment-full size-full" alt="Get Public Transport Timetables" />
                   </a>
                 </p>
             
@@ -270,7 +295,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/first-endeavor-generative-art/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/generative.jpg" class="attachment-full size-full" alt="A first endeavor into generative art" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/generative.jpg" class="attachment-full size-full" alt="A first endeavor into generative art" />
                   </a>
                 </p>
             
@@ -303,7 +328,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/introducing-gpxslicer/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/introducing-gpxslicer.jpg" class="attachment-full size-full" alt="Introducing gpxslicer" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/introducing-gpxslicer.jpg" class="attachment-full size-full" alt="Introducing gpxslicer" />
                   </a>
                 </p>
             
@@ -334,7 +359,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2020/understanding-overpass/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/understanding_overpass.jpg" class="attachment-full size-full" alt="Understanding Overpass, the API of OpenStreetMap" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/understanding_overpass.jpg" class="attachment-full size-full" alt="Understanding Overpass, the API of OpenStreetMap" />
                   </a>
                 </p>
             
@@ -363,7 +388,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2019/sorting-is-hard/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/sorting_is_hard.jpg" class="attachment-full size-full" alt="Alphabetical sorting is hard" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/sorting_is_hard.jpg" class="attachment-full size-full" alt="Alphabetical sorting is hard" />
                   </a>
                 </p>
             
@@ -390,7 +415,7 @@
             
                 <p>
                   <a href="https://hann.io/articles/2019/autumn-of-1929/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/frenyo_tatra.jpg" class="attachment-full size-full" alt="The autumn of 1929 – the story of two hikes" />
+                    <img width="1200" height="630" src="https://storage.googleapis.com/storage.hann.io/assets/og/frenyo_tatra.jpg" class="attachment-full size-full" alt="The autumn of 1929 – the story of two hikes" />
                   </a>
                 </p>
             
@@ -410,36 +435,6 @@
         </item>
       
     
-      
-    
-          
-        <item>
-          <title>EXPECT A HAPPY HOBBY</title>
-          <description>
-            <![CDATA[
-            
-                <p>
-                  <a href="https://hann.io/articles/2018/expect-a-happy-hobby/">
-                    <img width="1200" height="630" src="https://hann.io/assets/og/russian_license_plate.jpg" class="attachment-full size-full" alt="EXPECT A HAPPY HOBBY" />
-                  </a>
-                </p>
-            
-            <p>Do you know what a COYOTE TOOTHACHE and a CHECKBOOK PHOTOCOPY have in common? If written in uppercase, all the letters of these expressions appear in the Cyrillic alphabet.<span class="sidenote"> That is, if we take a more relaxed definition of letters being the same shape: in many typefaces, K and К and Y and У do not look the same, just <em>very</em> similar. </span> Although, to be precise, if somebody would try to read these using the Cyrillic alphabet, they would read “souote tootnase” and “sneckvook rnotosoru”, respectively.</p>
-
-<p>I started thinking about this when I realized that I had never seen a Russian license plate with letters that do not also appear in the Latin alphabet. So I started to wonder about two things: is this observation true in general? If so, what words could we make up that would consist only of such letters?</p>
-
-            ]]>
-          </description>
-          <pubDate>Sun, 02 Dec 2018 00:00:00 +0100</pubDate>
-          <link>https://hann.io/articles/2018/expect-a-happy-hobby/</link>
-          <guid isPermaLink="true">https://hann.io/articles/2018/expect-a-happy-hobby/</guid>
-          
-          
-          <category>python</category>
-          
-          <category>language</category>
-          
-        </item>
       
     
   </channel>

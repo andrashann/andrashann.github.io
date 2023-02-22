@@ -46,7 +46,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hann.io/articles/2020/manhattan-distance/" />
   <meta property="og:description" content="According to my analysis, it is likely that there is, but this seems not to be the case in other, more densely populated localities." />
-  <meta property="og:image" content="https://hann.io/assets/og/manhattan_distance.jpg" />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/manhattan_distance.jpg" />
   <meta property="article:published_time" content="2020-10-17T00:00:00+02:00" />
   <!-- og end -->
 </head>
@@ -56,7 +56,7 @@
 <header>
     <nav class="group">
 				<a href="/">hann.io</a>
-	<!--<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>-->
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
 	
 		
 		
@@ -71,6 +71,54 @@
     <article class="group">
       <h1>Is there enough space in Manhattan to stay six feet apart?</h1>
 <p class="subtitle">October 17, 2020
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </p>
 
@@ -100,7 +148,7 @@
 
 <p>Luckily, New York has an extensive repository of open data, and all of these are available: <a href="https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas-NTA-/cpf4-rkhq">Neighborhood Tabulation Areas</a> in a spatial data format; <a href="https://data.cityofnewyork.us/City-Government/New-York-City-Population-By-Neighborhood-Tabulatio/swpk-hqdp">Population by NTAs</a> in a spreadsheet; and <a href="https://data.cityofnewyork.us/Environment/Landcover-Raster-Data-2010-3ft-Resolution/9auy-76zt">Land cover data</a> as a spatial raster dataset. I used a 3-feet resolution version of this data for my analysis as it is much smaller and faster to work with, but <a href="https://data.cityofnewyork.us/Environment/Land-Cover-Raster-Data-2017-6in-Resolution/he6d-2qns">a newer and 36 times more detailed dataset</a> (with more land cover types) is also available.</p>
 
-<p><figure class="fullwidth"><img src="/assets/img/ny_dist/maps.png" alt="" /><figcaption><span>New York geo data: polygons of neighborhoods; land cover raster data; close-up of the land cover layer. Data from <a href="http://data.cityofnewyork.us/">NYC OpenData</a>, figures by the Author.</span></figcaption></figure></p>
+<p><figure class="fullwidth"><img src="https://storage.googleapis.com/storage.hann.io/img/ny_dist/maps.png" alt="" /><figcaption><span>New York geo data: polygons of neighborhoods; land cover raster data; close-up of the land cover layer. Data from <a href="http://data.cityofnewyork.us/">NYC OpenData</a>, figures by the Author.</span></figcaption></figure></p>
 
 <h2 id="tools">Tools</h2>
 
@@ -128,7 +176,7 @@
 
 <p>Since local recommendations related to distancing use imperial units (suggesting <a href="https://www.nytimes.com/2020/04/14/health/coronavirus-six-feet.html">staying 6 feet apart</a>), I used this distance in my analysis.<label for="sn-id-imperial" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-imperial" class="margin-toggle" /><span class="sidenote"> Another reason for using imperial units here is the fact that the source data uses a projection based on it. </span> Every person needs to have an empty circle around them that has a radius of 3 feet. However, since same-sized circles cannot be packed perfectly — there will always be some space between them — people will take up a bit more space if we want to ensure that nobody is closer than 6 ft to another person.</p>
 
-<p><figure><img src="/assets/img/ny_dist/citrus_fruits.jpg" alt="" /><figcaption><span>“The most efficient way to pack different-sized circles together is not obvious.” — says the caption of the same image on the <a href="https://en.wikipedia.org/w/index.php?title=Circle_packing&amp;oldid=973871517">Wikipedia page for circle packing</a>. <a href="https://commons.wikimedia.org/wiki/File:Citrus_fruits.jpg">Photo</a> by Scott Bauer, public domain.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/ny_dist/citrus_fruits.jpg" alt="" /><figcaption><span>“The most efficient way to pack different-sized circles together is not obvious.” — says the caption of the same image on the <a href="https://en.wikipedia.org/w/index.php?title=Circle_packing&amp;oldid=973871517">Wikipedia page for circle packing</a>. <a href="https://commons.wikimedia.org/wiki/File:Citrus_fruits.jpg">Photo</a> by Scott Bauer, public domain.</span></figcaption></figure></p>
 
 <p>The area of a circle whose radius is 3 ft is <em>r</em>²π=28.27 ft²; according to <a href="https://en.wikipedia.org/w/index.php?title=Circle_packing&amp;oldid=973871517">Wikipedia</a>, we have to divide this by 0.9069 to get the actual size of the occupied area when circles are packed — the result is then 31.18 ft².<label for="sn-id-wall" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-wall" class="margin-toggle" /><span class="sidenote"> This setup also assumes that people cannot stand right next to the edge of the available space (e.g. next to a wall) but their whole six feet wide bubble is within this area. </span></p>
 
@@ -146,7 +194,7 @@
 
 <p>We can also look at our research question at another angle: what is the largest possible distance people can theoretically keep if they are all on the streets? This is very easy to calculate (see <a href="https://gist.github.com/andrashann/3ff77487786de4fe8eeb45b3839b5a49#file-new_york_distancing_space-ipynb">the notebook</a>). For this <em>metric</em>, I return to the <em>metric</em> system (pun intended) and calculate this distance in meters.</p>
 
-<p><figure><img src="/assets/img/ny_dist/max_physical_distance_m_half_road.png" alt="" /><figcaption><span>Maximum distance (in meters) that people could keep if everyone went out to the street. Figure by the Author.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/ny_dist/max_physical_distance_m_half_road.png" alt="" /><figcaption><span>Maximum distance (in meters) that people could keep if everyone went out to the street. Figure by the Author.</span></figcaption></figure></p>
 
 <p>I show this value per neighborhood on the map for the neighborhoods of New York City (except for Staten Island, where population density is much lower than in the other four boroughs).</p>
 
@@ -160,7 +208,7 @@
 
 <p>For example, if we used a more detailed dataset — and preferably a vector-based one — for land cover, we could get the actual usable area and we could fit circles in a way that relax the assumption that the full “safety circle” has to be within the usable area.<label for="sn-id-buffer" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-buffer" class="margin-toggle" /><span class="sidenote"> We can simply add a buffer to the relevant areas and fill this buffered shape with circles with a 6 feet radius. </span> Such data were not available for New York City. However, there are places in the world, where it is, for example, the <a href="https://www.pdok.nl/introductie/-/article/basisregistratie-grootschalige-topografie-bgt-"><em>Basisregistratie Grootschalige Topografie </em>dataset</a> in the Netherlands would be suitable for this purpose</p>
 
-<p><figure><img src="/assets/img/ny_dist/utrecht.png" alt="" /><figcaption><span>Ultra detailed land cover data from the Netherlands: the <a href="https://www.pdok.nl/introductie/-/article/basisregistratie-grootschalige-topografie-bgt-">BGT dataset</a>. This segment shows the “road parts” layer: paved areas, pedestrian and cyclist paths (greens, yellow-green); parking spots (purple); pavement (blue); public transport areas (sand); and areas occupied by railways (reddish); Figure by the Author — created using <a href="https://qgis.org/">QGIS</a>.</span></figcaption></figure></p>
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/ny_dist/utrecht.png" alt="" /><figcaption><span>Ultra detailed land cover data from the Netherlands: the <a href="https://www.pdok.nl/introductie/-/article/basisregistratie-grootschalige-topografie-bgt-">BGT dataset</a>. This segment shows the “road parts” layer: paved areas, pedestrian and cyclist paths (greens, yellow-green); parking spots (purple); pavement (blue); public transport areas (sand); and areas occupied by railways (reddish); Figure by the Author — created using <a href="https://qgis.org/">QGIS</a>.</span></figcaption></figure></p>
 
 <p>In any case, I feel that the research question is a valid one in the current global pandemic: there could easily be places on the globe where there is not enough space for people to go outside and keep their distance. After all, New York City is not even on the <a href="https://en.wikipedia.org/wiki/List_of_cities_proper_by_population_density">list of top 50 most densely populated cities</a>. NYC’s densest borough, Manhattan has an overall population density of 26,821 people per square kilometers. Manila, the capital city of the Philippines (and the most densely populated city according to the table linked above) has an overall population density of 46,178 ppkm². It is very well possible that its densest parts do not have enough outdoor space.</p>
 
