@@ -271,6 +271,8 @@ section { padding-top: 1rem; padding-bottom: 1rem; }
 
 ul, ol { width: 55%; padding-left: 5%; /*list-style-type: none; */ }
 
+li ul, li ol { width: 95%; padding-left: 5%; /*list-style-type: none; */ }
+
 li { margin: 0.5em 0; }
 
 figure, figure img.maincolumn { width: 60%; -webkit-margin-start: 0; -webkit-margin-end: 0; margin-bottom: 1em; }
@@ -291,7 +293,7 @@ img { max-width: 100%; }
 
 li .sidenote, li .marginnote { margin-right: -80%; }
 
-blockquote .sidenote, blockquote .marginnote { margin-right: -79%; }
+blockquote .sidenote, blockquote .marginnote { margin-right: -72%; font-style: normal; }
 
 .sidenote-number { counter-increment: sidenote-counter; }
 

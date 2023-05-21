@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Peak performance | hann.io</title>
+  <meta name="description" content="A friend of mine came to me with a really fascinating question: can we find all the peaks in Hungary, no matter how tall or short they are - a mountain, a hi...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+  
+  <link rel="canonical" href="https://hann.io/articles/2023/peak-performance/">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="hann.io" href="https://hann.io/feed.xml" />
+
+  
+
+  <!-- favico and friends -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png">
+  <link rel="manifest" href="/favico/site.webmanifest">
+  <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#a00000">
+  <link rel="shortcut icon" href="/favico/favicon.ico">
+  <meta name="msapplication-TileColor" content="#a00000">
+  <meta name="msapplication-config" content="/favico/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favico end -->
+
+
+  <!-- og -->
+  <meta property="og:title" content="Peak performance" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hann.io/articles/2023/peak-performance/" />
+  <meta property="og:description" content="A friend of mine came to me with a really fascinating question: can we find all the peaks in Hungary, no matter how tall or short they are - a mountain, a hi..." />
+  <meta property="og:image" content="https://storage.googleapis.com/storage.hann.io/og/peak_performance.jpg" />
+  <meta property="article:published_time" content="2023-05-21T20:00:00+02:00" />
+  <!-- og end -->
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+				<a href="/">hann.io</a>
+	<!--<a href="/"><img class="badge" src="/img/badge_1.png" alt="CH"></a>-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	</nav>
+</header>
+    <article class="group">
+      <h1>Peak performance</h1>
+<p class="subtitle">May 21, 2023
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</p>
+
+<h2 id="an-interesting-question">An interesting question</h2>
+
+<p>A couple of months ago I got a message from a friend:</p>
+
+<blockquote>
+  <p>Hey, a friend of mine is looking for all the peaks in Hungary, no matter how tall or short they are. He’s not satisfied with the ones available on OpenStreetMap.</p>
+</blockquote>
+
+<p>Well, this was a problem because I usually go to OSM as a first step when thinking about geographic problems. Getting all Hungarian peaks that are in the OSM database is trivial, for example, by searching for <a href="http://overpass-turbo.eu/s/1u5O">natural=peak nodes in Overpass Turbo</a>.<label for="sn-id-osmdatamodel" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-osmdatamodel" class="margin-toggle" /><span class="sidenote"> Read more about the OSM data model <a href="https://wiki.openstreetmap.org/wiki/Elements">here</a> to understand what nodes are. For the specific natural=peak tag, check <a href="https://wiki.openstreetmap.org/wiki/Tag:natural%3Dpeak">this page</a>. Or, for a detailed tutorial on Overpass Turbo, check out <a href="/articles/2020/understanding-overpass/">my earlier post</a>. </span> However, since OSM is a community project with data added by volunteers, we cannot expect this list to be exhaustive or 100% accurate, even for the peaks that <em>are</em> in the database.</p>
+
+<p>My overly ambitious and overconfident answer was this:</p>
+
+<blockquote>
+  <p>Well, if you’re not happy with what’s already in OSM, you could just grab some SRTM<label for="sn-id-srtm" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-srtm" class="margin-toggle" /><span class="sidenote"> The <a href="https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission">Shuttle Radar Topography Mission (SRTM)</a> data is a freely available near-global <a href="https://en.wikipedia.org/wiki/Digital_elevation_model">Digital Elevation Model (DEM)</a>, containing the elevation above sea level for most places on Earth. A good site to download it from is <a href="https://dwtkns.com/srtm30m/">this one</a>. </span> data, define what a peak is, do some GIS<label for="sn-id-gis" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-gis" class="margin-toggle" /><span class="sidenote"> The acronym literally stands for <a href="https://en.wikipedia.org/wiki/Geographic_information_system">Geographic Information System</a> but can be used to refer to any analysis of geographic data. </span> magic, and bam, you’ve got your peaks.</p>
+</blockquote>
+
+<h2 id="trying-to-implement-some-gis-magic">Trying to implement “some GIS magic”</h2>
+
+<p>While the points I made were correct, implementing them proved to be more challenging than I had anticipated.</p>
+
+<p>The simplest definition of a peak could be “any point where all adjacent points are at a lower elevation”. This is easy to calculate, but does not feel right. Is a tiny bump of, say, 0.25 meters on a mountain ridge really a peak? It felt like this example would not be significant enough to be called so.</p>
+
+<p>Therefore, I set out to understand the definition of a peak. Fortunately, I quickly found the Wikipedia article discussing <a href="https://en.wikipedia.org/wiki/Topographic_prominence">topographic prominence</a> and <a href="https://en.wikipedia.org/wiki/Topographic_isolation">topographic isolation</a>.<label for="sn-id-prom-iso" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-prom-iso" class="margin-toggle" /><span class="sidenote"> The first of these two articles is a lot richer (with very detailed explanations and examples), I recommend checking out that one. </span> It turns out that there are two important characteristics of peaks, apart from the well-known measure of elevation above sea level (definitions taken from the corresponding Wikipedia articles):</p>
+
+<ul>
+  <li><strong>Topographic prominence</strong> measures the height of a mountain or hill’s summit relative to the lowest contour line encircling it but containing no higher summit within it. It is a measure of the independence of a summit.</li>
+  <li><strong>Topographic isolation</strong> is the minimum distance to a point of equal elevation from a given summit.</li>
+</ul>
+
+<p>While these are not trivial to understand at first glance, the figure provided in the articles clarifies the definitions:</p>
+
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/peak_performance/topographic_isolation_and_prominence.png" alt="" /><figcaption><span>Topographic isolation and prominence of summit B. Source: <a href="https://commons.wikimedia.org/wiki/File:Topographic_isolation_and_prominence.svg">Andrew pmk / Wikimedia Commons</a> CC BY-SA 3.0</span></figcaption></figure></p>
+
+<p>Okay, so I have the data and definitions, time for the aforementioned GIS magic: find all potential peaks (points that are higher than their neighbors), calculate their prominence and isolation, and find some thresholds above which a point can be called a peak.</p>
+
+<p>And this is where I got stuck. I quickly realized that if I didn’t come up with a smart algorithm, I would essentially be comparing every point in the world to every point in the world, which is an impossibly large task. I thought about first identifying peaks by finding points where all neighboring points have a lower elevation, then combining this with <a href="https://en.wikipedia.org/wiki/Contour_line">contour lines</a> that I can generate from the SRTM data,<label for="sn-id-contour" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-contour" class="margin-toggle" /><span class="sidenote"> SRTM data comes in a raster format, which means that the surface of the Earth is divided into small areas, and we know the elevation in those areas. Contour lines are vector-based: they are looped lines that connect adjacent points that have the same elevation. These can be described as mathematical equations instead of just coordinates and an elevation. This makes it easy to perform operations such as determining whether or not a point is inside a contour. For more information on vector and raster data, see <a href="https://docs.qgis.org/3.28/en/docs/gentle_gis_introduction/vector_data.html#overview">Chapter 3</a> and <a href="https://docs.qgis.org/3.28/en/docs/gentle_gis_introduction/raster_data.html#overview">Chapter 6</a> of “A Gentle Introduction to GIS”. </span> but this would only have helped to find the prominence of the peaks. Isolation still requires a wide (computationally expensive) search. I am not a computer scientist, so I decided to look a bit further, hoping that someone already has a solution for this.</p>
+
+<h2 id="a-solved-problem">A solved problem</h2>
+
+<p>As it turns out, other people have indeed pondered this problem before me. I quickly found <a href="https://www.andrewkirmse.com/">Andrew Kirmse’s website</a> which has a detailed and fascinating guide on calculating prominence and isolation efficiently as well as <a href="https://journals.sagepub.com/doi/10.1177/0309133317738163">a journal article</a> covering this topic.<label for="sn-id-andrew" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-andrew" class="margin-toggle" /><span class="sidenote"> Unlike me, Andrew isn’t just some random guy on the internet; he was behind the creation of Google Maps and Google Earth among many other projects. </span> He even shared a dataset with close to 12 million peaks in it. Unfortunately, since his dataset is limited to peaks with a prominence of at least 300 feet, it does not cover all the little humps in Hungary that my friend’s friend was after.</p>
+
+<p>In their <a href="https://drive.google.com/file/d/1ESejn8b6BF4EvpwQNtixsqb0_cGJ2QgM/view">preprint paper</a>, Andrew and Jonathan de Ferranti point out an important limitation of using SRTM data for the analysis of peaks: it is just not granular enough. As they state: “because DEMs represent the average elevation values in each of their samples, they tend to underestimate summit elevations, sometimes significantly”. This is something I’ve seen many times when out hiking: my digital map (created using SRTM data) shows only a few meters of elevation to conquer, while in reality there is a significant peak that is smiply not shown in the contour lines.</p>
+
+<p>At this point, I decided that I would not actually try to identify peaks. The data is not granular enough and the calculations would be computationally expensive. I told my friend that I could not reasonably get a better list of peaks than what is already in OSM.</p>
+
+<h2 id="how-are-mountains-named">How are mountains named?</h2>
+
+<p>While researching this topic, I had an idea for an interesting project: let’s try to understand the why certain geological formations have the names they have. Why is an elevated point called a mountain, a hill, a peak, a rock, or something else? For example, in the OSM list of peaks, there are several Hungarian elevated places that are called a mountain, while their elevation is less than 200 meters above sea level – but <a href="https://www.openstreetmap.org/node/2334890439#map=16/48.0723/20.5448&amp;layers=YN">there is a “hill”</a> that is 778 meters tall.</p>
+
+<p>I thought about getting the list published by Krimse and de Ferranti, finding the name of the peak in OSM, and then running a classification algorithm where elevation, isolation, and prominence are the explanatory variables and the peak type is the outcome variable. Then, I could understand how peaks are named – and probably identify some misnamed ones that should be called a hill instead of a mountain, for example.</p>
+
+<p>I soon found out that once again I am not the first person to have this idea. <a href="https://sites.google.com/stephabegg.com/photography/projects/2/regression">Steph Abegg did almost exactly this</a><label for="sn-id-abeggpaper" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-abeggpaper" class="margin-toggle" /><span class="sidenote"> I would have looked at peaks in Hungary, but otherwise her approach is very similar to what I had in mind. Excerpt from her abstract: “Why is it Mount Baker and Mount Rainier, and not Baker Mountain or Rainier Peak? Are Peaks really peakier and Mounts more massive, or do summit titles follow too much whim and misnaming for any significant relationships to exist?” </span> in 2010 when looking at peaks, mounts, and mountains in the state of Washington in the US. I really recommend reading not only the summary on the website, but also the <a href="https://drive.google.com/uc?id=1wo2lDXXiyg5X196u-SDW3Um88di8FPBT">attached report</a>.</p>
+
+<h3 id="potential-extensions-to-the-existing-research">Potential extensions to the existing research</h3>
+
+<p>While the above paper covers much of what I had in mind, there are still avenues to explore in understanding naming conventions:</p>
+
+<ol>
+  <li>The paper uses a multinomial logit regression, where the explanatory variables are combined in a linear fashion. It would be interesting to see a tree-based approach to the prediction that allows for a more “what-if” approach to naming. For example, we could get the following rule: “an elevated point is a hill if it is shorter than 500 meters; if it is higher, it is a mountain if its prominence is less than 200 meters, and a peak otherwise”.</li>
+  <li>There are some names that suggest that there are other variables that contribute to the naming algorithm.
+    <ul>
+      <li>For example, there is a peak called <a href="https://www.openstreetmap.org/node/3437753657#map=16/48.1227/20.5344&amp;layers=YN"><em>Köpüs-tető</em> in the Bükk Mountains</a> in Hungary. <em>Tető</em> means top, and the name implies (at least to me) a somewhat flat peak. Pointiness or flatness is not directly accounted for by using prominence and isolation, although there is some information in these variables.</li>
+      <li><label for="margin-figure-pengoko" class="margin-toggle">⊕</label><input type="checkbox" checked="checked" id="margin-figure-pengoko" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="https://storage.googleapis.com/storage.hann.io/img/peak_performance/pengo_ko_fortepan_10214.jpg" alt="" /><br /><a href="https://www.openstreetmap.org/node/3213402473#map=14/48.4056/21.3866&amp;layers=YN">Pengő-kő (literally: Ringing Rock) in the Zemplén mountains</a> in Hungary. Today, it is covered in forests with no views, but as this photo from the 50s shows, this was not always the case. This could be the reason why it is called a “rock”. Photo <a href="https://fortepan.hu/hu/photos/?id=10214">CC-BY-SA Fortepan / Kurutz Márton</a></span> Some peaks could be covered by vegetation, while otheres may not. For example, one would expect a peak called Something Rock to have a visible rock surface.</li>
+    </ul>
+  </li>
+  <li>It would be interesting to see if different cultures have different naming patterns. While the original paper discusses expanding the analysis to other states, countries with different languages are not mentioned.
+    <ul>
+      <li>For example, both <em>mount</em> and <em>mountain</em> are typically translated to <em>hegy</em> in Hungarian. Could we suggest another translation (to an existing word) based on looking at and comparing the characterstics of mounts and mountains to peaks that have proper Hungarian names?</li>
+      <li>In the Spanish-speaking world, peak names do not typically have a “peak type” component. How do we take this into account?</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="where-are-my-peaks-then">Where are my peaks then?</h2>
+
+<p>As mentioned previously, I’d first look at OpenStreetMap data. It might be good enough for the purpose. The easiest way to get something more “official” is to buy a real paper hiking map of the area you want to explore. These are usually of a much higher quality than online maps, although there is no guarantee that they will show more peaks.</p>
+
+<p>Another way to find peaks is to look at orienteering maps of the area. Orienteering is a sport in which (very simply put) you have to find a series of checkpoints in a given order in a given area in the shortest amount of time. It typically involves running or fast walking over varied terrain - hills, valleys, ditches, rocks; open areas and forests are typically present. Since you need to be able to plan your route very carefully, tournaments use highly detailed maps, much more detailed than the usual outdoor maps.</p>
+
+<p><figure><img src="https://storage.googleapis.com/storage.hann.io/img/peak_performance/orienteering_map.jpg" alt="A small section of an orienteering map." /><figcaption><span>A small section of an orienteering map. While typical outdoor maps have a 1:40000 scale, orienteering maps are typically 1:10000 or even 1:5000. Read more about these maps on <a href="https://en.wikipedia.org/wiki/Orienteering_map">Wikipedia</a>. Source: <a href="https://commons.wikimedia.org/wiki/File:Tugirirada.jpg">Yx teine / Wikimedia Commons</a> CC BY-SA 3.0.</span></figcaption></figure></p>
+
+<p>These maps are not easy to come by, as they require a tremendous amount of effort to create. While LiDAR-equipped drones can help a lot with the topography of the area, most features still need to be recorded by humans. Additionally, orienteering maps have no labels on them, so it is probably a good idea to keep a less detailed but labelled map at hand. However, if such a map is available, it is a good idea to use it.</p>
+
+<p>A third option is to use military maps. While not as detailed as orienteering maps, they may be available for the entire country, and I’ve found that they have quite a few peaks marked – even if not all the tiny ones.<label for="sn-id-militarymaps" class="margin-toggle sidenote-number"></label><input type="checkbox" checked="checked" id="sn-id-militarymaps" class="margin-toggle" /><span class="sidenote"> For Hungary, see military maps e.g. <a href="https://terkepbolt.unas.hu/spl/854169/Katonai-terkepek-150000-ma">in this shop</a>. </span></p>
+
+<p><span style="display:block;width:100%;text-align:center">❧</span></p>
+
+<p><em>Cover photo: View from <a href="https://hiking.waymarkedtrails.org/#search?query=pr%C3%A9dik%C3%A1l%C3%B3sz%C3%A9k&amp;map=18.0/47.7393/18.9207">Prédikálószék</a> on April 13, 2023.  Photo by the Author, 2023. Creative Commons CC BY-NC-SA 4.0</em></p>
+
+
+
+<div id="disqus_box">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://hann.io/articles/2023/peak-performance/"
+this.page.identifier = "/articles/2023/peak-performance"
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hann-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                    
+</div>
+
+    </article>
+    <span class="print-footer">Peak performance - May 21, 2023 - András Hann</span>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-120061833-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>
